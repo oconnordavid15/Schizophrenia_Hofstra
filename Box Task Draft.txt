@@ -1,0 +1,2288 @@
+﻿ **************************************************************************************************************
+**************************************************************************************************************
+**************************************************************************************************************
+	The Box Task as described in Moritz, S., Göritz, A. S., Balzan, R. P., Gawęda, Ł., Kulagin, S. C., & Andreou, C. (2017). 
+	A new paradigm to measure probabilistic reasoning and a possible answer to the question why psychosis-prone individuals jump to conclusions. 
+	Journal of Abnormal Psychology, 126(4), 406.
+	http://dx.doi.org/10.1037/abn0000262
+
+**************************************************************************************************************
+**************************************************************************************************************
+	Main Inquisit programming: Jakob Scheunemann (j.scheunemann@uke.de)
+
+**************************************************************************************************************
+**************************************************************************************************************
+	Last Modified: 2021-02-11, Jakob Scheunemann
+	Last updated:  2021-02-11, Jakob Scheunemann
+	Minor changes: 2021-02-26, Karsten Grzella
+
+**************************************************************************************************************
+**************************************************************************************************************
+	Background info about the task: ...
+
+**************************************************************************************************************
+**************************************************************************************************************
+**************************************************************************************************************
+**************************************************************************************************************
+	About this script: 
+	This script displays the box task with 12 boxes, with up to 20 trials. 
+	After a box opens, the participant can decide wether to open more boxes or to continue with a decision.
+	If the participant decides to have enough information, they can answer the likelihood for the color, decide for a color and rate confidence.
+ 
+	Changebable parameters:
+	The sequences and lengths of each trials can be determined easily.
+	The instructions can be changed/translated easily.
+	The likert scale for likelihood rating and confidence rating can be changed.
+	The number of trials can be determined (see element "expt")
+	To decide, whether the sequences should be presented in random order or in sequence, see list element trial_sequence and change settings there.
+	
+**************************************************************************************************************
+**************************************************************************************************************
+**************************************************************************************************************
+**************************************************************************************************************
+
+											START OF SKRIPT
+
+**************************************************************************************************************
+**************************************************************************************************************
+	Setting the sequences: For each trial, the sequence needs to be defined in the element color_sequence_trialXX
+	The sequence can be up to 12 items long. If the number of items is less than 12, the box task become the pressure
+	version automatically. That means, if the participant wants to open more boxes than items in the list, the trial ends.
+
+	The sequence of colors is being defined, indepenedly from where the participant clicks.
+
+	Additionally, the unique two colors in each trial need to be defined in colors_unique_trialXX.
+
+	Additionally, the colors need to be defined in text format in colors_text_trialXX. If the experiment should be run in another
+	language than English, insert color names in the corresponding language.
+
+	If one prefers less than 20 trials, paramaters in element expt need to be changes below. Either delete all unused list elements or 
+	fill them with any colors.
+
+	For different colors see: https://www.millisecond.com/support/docs/v6/html/language/colors.htm
+
+**************************************************************************************************************
+**************************************************************************************************************
+
+*This list defines the sequence in trial 01. For example, if sequence reads: "/items = (yellow, blue, yellow, yellow, blue)", the participant sees
+*the color yellow for the first box they opens (no matter which of the 12). The second box will be blue. This trial will end, when the participant
+*requests to see a sixth box, as the number of elements in this list is 5. In this case, the participant is refered to the next trial. 
+*Please note: If one prefers to have a no-pressure condition, simply make sure to have 12 items in each list and to change the instructions accordingly. 
+<list color_sequence_trial01> 
+/ items = (orange, purple, purple, orange, orange, purple, orange, orange, orange, orange, purple, orange, orange, purple, orange, purple, orange, orange)
+/ selectionmode = values.current_click 
+</list>
+
+*This list displays the unique colors in this trial. For example, if the sequence defined above reads "/items = (yellow, blue, yellow, yellow, blue)", the 
+*items should be "/ items = (yellow, blue)". In this case, yellow will be on the left and blue on the right, when the participant decides for any of the two colors
+<list colors_unique_trial01> 
+/ items = (orange, purple)
+/ selectionrate = block
+</list>
+
+*This list contains the colors in each trial in text format. This should be translated in the corresponding language.
+<list colors_text_trial01> 
+/ items = ("orange", "purple")
+/ selectionrate = block
+</list>
+
+<list color_sequence_trial02>
+/ items = (gray, fuchsia, gray, fuchsia,gray, fuchsia,gray, fuchsia,gray, fuchsia, fuchsia, gray, fuchsia,gray, fuchsia, fuchsia, gray)
+/ selectionmode = values.current_click
+</list>
+
+<list colors_unique_trial02> 
+/ items = (gray, fuchsia)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial02> 
+/ items = ("gray", "purple")
+/ selectionrate = block
+</list>
+
+
+<list color_sequence_trial03>
+/ items = (deepskyblue, orangered, orangered, deepskyblue, deepskyblue, orangered, deepskyblue, orangered, orangered, orangered)
+/ selectionmode = values.current_click
+</list>
+
+<list colors_unique_trial03> 
+/ items = (orangered, deepskyblue)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial03> 
+/ items = ("red", "blue")
+/ selectionrate = block
+</list>
+
+
+
+<list color_sequence_trial04> 
+/ items = (purple, grey, purple, grey, purple, grey, purple, grey, purple, grey, purple, grey, purple, grey, purple, grey, purple, grey)
+/ selectionmode = values.current_click 
+</list>
+
+<list colors_unique_trial04> 
+/ items = (purple, grey)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial04> 
+/ items = ("purple", "grey")
+/ selectionrate = block
+</list>
+
+
+<list color_sequence_trial05>
+/ items = (green, red, red)
+/ selectionmode = values.current_click
+</list>
+
+<list colors_unique_trial05> 
+/ items = (green, red)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial05> 
+/ items = ("green", "red")
+/ selectionrate = block
+</list>
+
+
+<list color_sequence_trial06>
+/ items = (orange, orange, pink)
+/ selectionmode = values.current_click
+</list>
+
+<list colors_unique_trial06> 
+/ items = (orange, pink)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial06> 
+/ items = ("orange", "pink")
+/ selectionrate = block
+</list>
+
+
+<list color_sequence_trial07> 
+/ items = (yellow, blue, yellow, yellow, blue)
+/ selectionmode = values.current_click 
+</list>
+
+<list colors_unique_trial07> 
+/ items = (yellow, blue)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial07> 
+/ items = ("yellow", "blue")
+/ selectionrate = block
+</list>
+
+
+<list color_sequence_trial08>
+/ items = (green, red, red)
+/ selectionmode = values.current_click
+</list>
+
+<list colors_unique_trial08> 
+/ items = (green, red)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial08> 
+/ items = ("green", "red")
+/ selectionrate = block
+</list>
+
+
+<list color_sequence_trial09>
+/ items = (orange, orange, pink)
+/ selectionmode = values.current_click
+</list>
+
+<list colors_unique_trial09> 
+/ items = (orange, pink)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial09> 
+/ items = ("orange", "pink")
+/ selectionrate = block
+</list>
+
+
+<list color_sequence_trial10>
+/ items = (orange, orange, pink)
+/ selectionmode = values.current_click
+</list>
+
+<list colors_unique_trial10> 
+/ items = (orange, pink)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial10> 
+/ items = ("orange", "pink")
+/ selectionrate = block
+</list>
+
+
+<list color_sequence_trial11> 
+/ items = (yellow, blue, yellow, yellow, blue)
+/ selectionmode = values.current_click 
+</list>
+
+<list colors_unique_trial11> 
+/ items = (yellow, blue)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial11> 
+/ items = ("yellow", "blue")
+/ selectionrate = block
+</list>
+
+
+
+<list color_sequence_trial12>
+/ items = (green, red, red)
+/ selectionmode = values.current_click
+</list>
+
+<list colors_unique_trial12> 
+/ items = (green, red)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial12> 
+/ items = ("green", "red")
+/ selectionrate = block
+</list>
+
+
+<list color_sequence_trial13>
+/ items = (orange, orange, pink)
+/ selectionmode = values.current_click
+</list>
+
+<list colors_unique_trial13> 
+/ items = (orange, pink)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial13> 
+/ items = ("orange", "pink")
+/ selectionrate = block
+</list>
+
+
+<list color_sequence_trial14> 
+/ items = (yellow, blue, yellow, yellow, blue)
+/ selectionmode = values.current_click 
+</list>
+
+<list colors_unique_trial14> 
+/ items = (yellow, blue)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial14> 
+/ items = ("yellow", "blue")
+/ selectionrate = block
+</list>
+
+
+
+<list color_sequence_trial15>
+/ items = (green, red, red)
+/ selectionmode = values.current_click
+</list>
+
+<list colors_unique_trial15> 
+/ items = (green, red)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial15> 
+/ items = ("green", "red")
+/ selectionrate = block
+</list>
+
+
+<list color_sequence_trial16>
+/ items = (orange, orange, pink)
+/ selectionmode = values.current_click
+</list>
+
+<list colors_unique_trial16> 
+/ items = (orange, pink)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial16> 
+/ items = ("orange", "pink")
+/ selectionrate = block
+</list>
+
+
+<list color_sequence_trial17> 
+/ items = (yellow, blue, yellow, yellow, blue)
+/ selectionmode = values.current_click 
+</list>
+
+<list colors_unique_trial17> 
+/ items = (yellow, blue)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial17> 
+/ items = ("yellow", "blue")
+/ selectionrate = block
+</list>
+
+
+<list color_sequence_trial18>
+/ items = (green, red, red)
+/ selectionmode = values.current_click
+</list>
+
+<list colors_unique_trial18> 
+/ items = (green, red)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial18> 
+/ items = ("green", "red")
+/ selectionrate = block
+</list>
+
+
+<list color_sequence_trial19>
+/ items = (orange, orange, pink)
+/ selectionmode = values.current_click
+</list>
+
+<list colors_unique_trial19> 
+/ items = (orange, pink)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial19> 
+/ items = ("orange", "pink")
+/ selectionrate = block
+</list>
+
+
+<list color_sequence_trial20>
+/ items = (orange, orange, pink)
+/ selectionmode = values.current_click
+</list>
+
+<list colors_unique_trial20> 
+/ items = (orange, pink)
+/ selectionrate = block
+</list>
+
+<list colors_text_trial20> 
+/ items = ("orange", "pink")
+/ selectionrate = block
+</list>
+
+**************************************************************************************************************
+**************************************************************************************************************
+**************************************************************************************************************
+**********************     INSTRUCTIONS    *******************************************************************
+**************************************************************************************************************
+**************************************************************************************************************
+**************************************************************************************************************
+
+***Introduction (Page at beginning of experiment)
+<instruct>
+/windowsize = (50%,66%)
+</instruct>
+
+
+
+*** Instructions ***
+<page instructions_pressure12_long>
+^^Thank you. For the following trials, the task will stay the same, except that now, there are 50 insteadof 12 boxes. Again, it is your task to determine, which color is more frequent. Again, each trial may terminate at any point.
+^^There will be no practice trial.
+</page>
+
+<page Reminder_Pressure>
+^^Keep in mind: The task might stop before every box is opened. 
+</page>
+
+<text instruction>
+/items = ("Please estimate which color will be displayed more frequently by the end (<%list.list_colornames_left.item(values.current_list)%> or <%list.list_colornames_right.item(values.current_list)%>):")
+/ position = (50%, 2%)
+/ fontstyle = ("Calibri", 2.6%)
+/ erase = false
+</text>
+
+<text probability>
+/items = ("Please indicate the probability that your chosen color will be displayed more frequently by the end: (You decided for color ")
+/ position = (50%, 93.5%)
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text decision_color>
+/items = ("Which color do you decide on?")
+/ position = (50%, 20%)
+/ fontstyle = ("Calibri", 2.6%)
+/ erase = false
+</text>
+
+<text want_decision>
+/items= ("I am ready to decide: This color will be displayed more frequently in the end:")
+/ position = (25%, 96.5%)
+/ fontstyle = ("Calibri", 2.6%)
+/ erase = false
+</text>
+
+<text confidence>
+/items = ("How confident are you with your decision? (You decided for color ")
+/ position = (50%, 93.5%)
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text start>
+/items = ("Trial <%expt.experiment.currentblocknumber%> of 3")
+/ position = (50%, 20%)
+/ fontstyle = ("Calibri", 5%)
+/ erase = false
+</text>
+
+<text reminder_pressure>
+/items = ("Keep in mind: Each trial may terminate at any point")
+/ position = (50%, 30%)
+/ fontstyle = ("Calibri", 3.5%)
+/ erase = false
+</text>
+
+<text too_late>
+/items = ("This trial is over, you decided too late.")
+/ position = (50%, 20%)
+/ fontstyle = ("Calibri", 2.6%)
+/ erase = false
+</text>
+
+<text next_button>
+/items= ("  Click Here >> ")
+/ position = (50%, 90%)
+/ fontstyle = ("Calibri", 2.6%)
+/ hjustify = center
+/ vjustify = center
+/ txbgcolor = silver
+/ erase = true(white)
+</text>
+
+<text OR>
+/items=("OR")
+/ position = (65%, 96.5%)
+/ fontstyle = ("Calibri", 2.6%)
+/ hjustify = center
+/ vjustify = center
+/ erase = false
+</text>
+
+
+**************************************************************************************************************
+**************************************************************************************************************
+**************************************************************************************************************
+*****************************     SHAPES    ******************************************************************
+**************************************************************************************************************
+**************************************************************************************************************
+**************************************************************************************************************
+
+***********************************************************
+*Objects properties
+***********************************************************
+*Position nullpoint: Initial
+<values>
+/rowPosX = 5%
+</values>
+
+*Positon X values: Space between circles and rectangles (cells)
+<values>
+/space1X = 0
+/space2X = 10
+/space3X = 20
+/space4X = 30
+/space5X = 40
+/space6X = 50
+/space7X = 60
+/space8X = 70
+/space9X = 80
+/space10X = 90
+</values>
+
+*Position Y values: Space between circles and rectangles (rows)
+<values>
+/row1PosY = 13%
+/row2PosY = 30.5%
+/row3PosY = 48%
+/row4PosY = 65.5%
+/row5PosY = 83%
+</values>
+
+*Size rectangles
+<values>
+/sizeBoxX = 7.8%
+/sizeBoxY = 13.87%
+</values>
+
+*Size circles
+<values>
+/sizeDotX = 6.5%
+/sizeDotY = 11.555%
+</values>
+
+*Size circles
+<values>
+/sizeRectangleX = 6.5%
+/sizeRectangleY = 6.5%
+</values>
+
+*Color rectangles (RGB)
+<values>
+/redBox = 50
+/greenBox = 37
+/blueBox = 41
+</values>
+
+*White background
+<shape white_BG>
+/shape = rectangle
+/color = white
+/size = (100%, 100%)
+</shape>
+
+*** For three different trials, we need each two different circles colors, for when the participants decides for one color
+<shape responseoption_trialdecide_color1>
+/shape = rectangle
+/color = black
+/size = (values.sizeRectangleX, values.sizeRectangleY)
+/position = (55%, 95%)
+/erase = false
+</shape>
+
+<shape responseoption_trialdecide_erase1>
+/shape = rectangle
+/color = white
+/size = (values.sizeRectangleX, values.sizeRectangleY)
+/position = (55%, 95%)
+/erase = false
+</shape>
+
+<shape responseoption_trialdecide_background_box1>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (30%, 50%)
+/erase = false
+</shape>
+
+<shape responseoption_trialdecide_color2>
+/shape = rectangle
+/color = black
+/size = (values.sizeRectangleX, values.sizeRectangleY)
+/position = (75%, 95%)
+/erase = false
+</shape>
+
+<shape responseoption_trialdecide_erase2>
+/shape = rectangle
+/color = white
+/size = (values.sizeRectangleX, values.sizeRectangleY)
+/position = (75%, 95%)
+/erase = false
+</shape>
+
+<shape responseoption_trialdecide_background_box2>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (70%, 50%)
+/erase = false
+</shape>
+
+
+***********************************************************
+*Definition of 64 boxes
+*************************First row*************************
+<shape box1>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space1X, values.row1PosY)
+/erase = false
+</shape>
+
+<shape box2>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space2X, values.row1PosY)
+/erase = false
+</shape>
+
+<shape box3>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space3X, values.row1PosY)
+/erase = false
+</shape>
+
+<shape box4>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space4X, values.row1PosY)
+/erase = false
+</shape>
+
+<shape box5>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space5X, values.row1PosY)
+/erase = false
+</shape>
+
+<shape box6>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space6X, values.row1PosY)
+/erase = false
+</shape>
+
+<shape box7>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space7X, values.row1PosY)
+/erase = false
+</shape>
+
+<shape box8>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space8X, values.row1PosY)
+/erase = false
+</shape>
+
+*************************Second row*************************
+
+<shape box9>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space1X, values.row2PosY)
+/erase = false
+</shape>
+
+<shape box10>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space2X, values.row2PosY)
+/erase = false
+</shape>
+
+<shape box11>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space3X, values.row2PosY)
+/erase = false
+</shape>
+
+<shape box12>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space4X, values.row2PosY)
+/erase = false
+</shape>
+
+<shape box13>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space5X, values.row2PosY)
+/erase = false
+</shape>
+
+<shape box14>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space6X, values.row2PosY)
+/erase = false
+</shape>
+
+<shape box15>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space7X, values.row2PosY)
+/erase = false
+</shape>
+
+<shape box16>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space8X, values.row2PosY)
+/erase = false
+</shape>
+
+*************************Third row*************************
+
+<shape box17>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space1X, values.row3PosY)
+/erase = false
+</shape>
+
+<shape box18>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space2X, values.row3PosY)
+/erase = false
+</shape>
+
+<shape box19>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space3X, values.row3PosY)
+/erase = false
+</shape>
+
+<shape box20>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space4X, values.row3PosY)
+/erase = false
+</shape>
+
+
+<shape box21>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space5X, values.row3PosY)
+/erase = false
+</shape>
+
+<shape box22>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space6X, values.row3PosY)
+/erase = false
+</shape>
+
+<shape box23>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space7X, values.row3PosY)
+/erase = false
+</shape>
+
+<shape box24>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space8X, values.row3PosY)
+/erase = false
+</shape>
+
+*************************Fourth row*************************
+
+<shape box25>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space1X, values.row4PosY)
+/erase = false
+</shape>
+
+<shape box26>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space2X, values.row4PosY)
+/erase = false
+</shape>
+
+<shape box27>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space3X, values.row4PosY)
+/erase = false
+</shape>
+
+<shape box28>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space4X, values.row4PosY)
+/erase = false
+</shape>
+
+<shape box29>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space5X, values.row4PosY)
+/erase = false
+</shape>
+
+<shape box30>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space6X, values.row4PosY)
+/erase = false
+</shape>
+
+<shape box31>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space7X, values.row4PosY)
+/erase = false
+</shape>
+
+<shape box32>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space8X, values.row4PosY)
+/erase = false
+</shape>
+
+*************************Fifth row*************************
+
+<shape box33>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space1X, values.row5PosY)
+/erase = false
+</shape>
+
+<shape box34>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space2X, values.row5PosY)
+/erase = false
+</shape>
+
+<shape box35>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space3X, values.row5PosY)
+/erase = false
+</shape>
+
+<shape box36>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space4X, values.row5PosY)
+/erase = false
+</shape>
+
+<shape box37>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space5X, values.row5PosY)
+/erase = false
+</shape>
+
+<shape box38>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space6X, values.row5PosY)
+/erase = false
+</shape>
+
+<shape box39>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space7X, values.row5PosY)
+/erase = false
+</shape>
+
+<shape box40>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space8X, values.row5PosY)
+/erase = false
+</shape>
+
+*************************Sixth row*************************
+<shape box41>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space1X, values.row6PosY)
+/erase = false
+</shape>
+
+<shape box42>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space2X, values.row6PosY)
+/erase = false
+</shape>
+
+<shape box43>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space3X, values.row6PosY)
+/erase = false
+</shape>
+
+<shape box44>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space4X, values.row6PosY)
+/erase = false
+</shape>
+
+<shape box45>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space5X, values.row6PosY)
+/erase = false
+</shape>
+
+<shape box46>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space6X, values.row6PosY)
+/erase = false
+</shape>
+
+<shape box47>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space7X, values.row6PosY)
+/erase = false
+</shape>
+
+<shape box48>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space8X, values.row6PosY)
+/erase = false
+</shape>
+
+*************************Seventh row*************************
+
+
+<shape box49>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space1X, values.row7PosY)
+/erase = false
+</shape>
+
+<shape box50>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space2X, values.row7PosY)
+/erase = false
+</shape>
+
+<shape box51>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space3X, values.row7PosY)
+/erase = false
+</shape>
+
+<shape box52>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space4X, values.row7PosY)
+/erase = false
+</shape>
+
+<shape box53>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space5X, values.row7PosY)
+/erase = false
+</shape>
+
+<shape box54>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space6X, values.row7PosY)
+/erase = false
+</shape>
+
+<shape box55>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space7X, values.row7PosY)
+/erase = false
+</shape>
+
+<shape box56>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space8X, values.row7PosY)
+/erase = false
+</shape>
+
+*************************Eighth row*************************
+
+<shape box57>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space1X, values.row8PosY)
+/erase = false
+</shape>
+
+<shape box58>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space2X, values.row8PosY)
+/erase = false
+</shape>
+
+<shape box59>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space3X, values.row8PosY)
+/erase = false
+</shape>
+
+<shape box60>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space4X, values.row8PosY)
+/erase = false
+</shape>
+
+<shape box61>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space5X, values.row8PosY)
+/erase = false
+</shape>
+
+<shape box62>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space6X, values.row8PosY)
+/erase = false
+</shape>
+
+<shape box63>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space7X, values.row8PosY)
+/erase = false
+</shape>
+
+<shape box64>
+/shape = rectangle
+/size = (values.sizeBoxX, values.sizeBoxY)
+/color = (values.redBox, values.greenBox, values.blueBox)
+/position = (values.rowPosX + values.space8X, values.row8PosY)
+/erase = false
+</shape>
+
+
+******
+Now 64 dots are defined to appear within the 64 boxes. At first, all dots are black, so that they are invisible before being clicked on. 
+Later its color is being changed if the corresponding box is being clicked on
+
+***********************************************************
+*Definition of 64 dots
+*************************First row*************************
+<shape dot1>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space1X, values.row1PosY)
+/erase = false
+</shape>
+
+<shape dot2>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space2X, values.row1PosY)
+/erase = false
+</shape>
+
+<shape dot3>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space3X, values.row1PosY)
+/ erase = false
+</shape>
+
+<shape dot4>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space4X, values.row1PosY)
+/ erase = false
+</shape>
+
+<shape dot5>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space5X, values.row1PosY)
+/ erase = false
+</shape>
+
+<shape dot6>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space6X, values.row1PosY)
+/ erase = false
+</shape>
+
+<shape dot7>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space7X, values.row1PosY)
+/ erase = false
+</shape>
+
+<shape dot8>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space8X, values.row1PosY)
+/ erase = false
+</shape>
+
+*************************Second row*************************
+
+<shape dot9>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space1X, values.row2PosY)
+/ erase = false
+</shape>
+
+<shape dot10>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space2X, values.row2PosY)
+/erase = false
+</shape>
+
+<shape dot11>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space3X, values.row2PosY)
+/erase = false
+</shape>
+
+<shape dot12>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space4X, values.row2PosY)
+/erase = false
+</shape>
+
+<shape dot13>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space5X, values.row2PosY)
+/erase = false
+</shape>
+
+<shape dot14>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space6X, values.row2PosY)
+/erase = false
+</shape>
+
+<shape dot15>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space7X, values.row2PosY)
+/erase = false
+</shape>
+
+<shape dot16>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space8X, values.row2PosY)
+/erase = false
+</shape>
+
+*************************Third row*************************
+
+<shape dot17>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space1X, values.row3PosY)
+/erase = false
+</shape>
+
+<shape dot18>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space2X, values.row3PosY)
+/ erase = false
+</shape>
+
+<shape dot19>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space3X, values.row3PosY)
+/erase = false
+</shape>
+
+<shape dot20>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space4X, values.row3PosY)
+/erase = false
+</shape>
+
+<shape dot21>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space5X, values.row3PosY)
+/erase = false
+</shape>
+
+<shape dot22>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space6X, values.row3PosY)
+/erase = false
+</shape>
+
+<shape dot23>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space7X, values.row3PosY)
+/erase = false
+</shape>
+
+<shape dot24>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space8X, values.row3PosY)
+/erase = false
+</shape>
+
+*************************Fourth row*************************
+
+<shape dot25>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space1X, values.row4PosY)
+/erase = false
+</shape>
+
+<shape dot26>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space2X, values.row4PosY)
+/erase = false
+</shape>
+
+<shape dot27>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space3X, values.row4PosY)
+/erase = false
+</shape>
+
+<shape dot28>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space4X, values.row4PosY)
+/ erase = false
+</shape>
+
+<shape dot29>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space5X, values.row4PosY)
+/erase = false
+</shape>
+
+<shape dot30>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space6X, values.row4PosY)
+/erase = false
+</shape>
+
+<shape dot31>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space7X, values.row4PosY)
+/erase = false
+</shape>
+
+<shape dot32>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space8X, values.row4PosY)
+/erase = false
+</shape>
+
+*************************Fifth row*************************
+
+<shape dot33>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space1X, values.row5PosY)
+/erase = false
+</shape>
+
+<shape dot34>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space2X, values.row5PosY)
+/erase = false
+</shape>
+
+<shape dot35>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space3X, values.row5PosY)
+/erase = false
+</shape>
+
+<shape dot36>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space4X, values.row5PosY)
+/erase = false
+</shape>
+
+<shape dot37>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space5X, values.row5PosY)
+/erase = false
+</shape>
+
+<shape dot38>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space6X, values.row5PosY)
+/ erase = false
+</shape>
+
+<shape dot39>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space7X, values.row5PosY)
+/erase = false
+</shape>
+
+<shape dot40>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space8X, values.row5PosY)
+/erase = false
+</shape>
+
+*************************Sixth row*************************
+<shape dot41>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space1X, values.row6PosY)
+/erase = false
+</shape>
+
+<shape dot42>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space2X, values.row6PosY)
+/erase = false
+</shape>
+
+<shape dot43>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space3X, values.row6PosY)
+/erase = false
+</shape>
+
+<shape dot44>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space4X, values.row6PosY)
+/erase = false
+</shape>
+
+<shape dot45>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space5X, values.row6PosY)
+/erase = false
+</shape>
+
+<shape dot46>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space6X, values.row6PosY)
+/erase = false
+</shape>
+
+<shape dot47>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space7X, values.row6PosY)
+/erase = false
+</shape>
+
+<shape dot48>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space8X, values.row6PosY)
+/ erase = false
+</shape>
+
+*************************Seventh row*************************
+
+<shape dot49>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space1X, values.row7PosY)
+/erase = false
+</shape>
+
+<shape dot50>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space2X, values.row7PosY)
+/erase = false
+</shape>
+
+<shape dot51>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space3X, values.row7PosY)
+/erase = false
+</shape>
+
+<shape dot52>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space4X, values.row7PosY)
+/erase = false
+</shape>
+
+<shape dot53>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space5X, values.row7PosY)
+/erase = false
+</shape>
+
+<shape dot54>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space6X, values.row7PosY)
+/erase = false
+</shape>
+
+<shape dot55>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space7X, values.row7PosY)
+/erase = false
+</shape>
+
+<shape dot56>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space8X, values.row7PosY)
+/erase = false
+</shape>
+
+*************************Eighth row*************************
+
+
+<shape dot57>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space1X, values.row8PosY)
+/erase = false
+</shape>
+
+<shape dot58>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space2X, values.row8PosY)
+/erase = false
+</shape>
+
+<shape dot59>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space3X, values.row8PosY)
+/erase = false
+</shape>
+
+<shape dot60>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space4X, values.row8PosY)
+/erase = false
+</shape>
+
+<shape dot61>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space5X, values.row8PosY)
+/erase = false
+</shape>
+
+<shape dot62>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space6X, values.row8PosY)
+/erase = false
+</shape>
+
+<shape dot63>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space7X, values.row8PosY)
+/erase = false
+</shape>
+
+<shape dot64>
+/shape = circle
+/color = black
+/size = (values.sizeDotX, values.sizeDotY)
+/position = (values.rowPosX + values.space8X, values.row8PosY)
+/erase = false
+</shape>
+
+**************************************************************************************************************
+**************************************************************************************************************
+**************************************************************************************************************
+*****************************     Trial elements repeated over different blocks   ****************************
+**************************************************************************************************************
+**************************************************************************************************************
+**************************************************************************************************************
+
+*** trial_choose is the trial, in which a participant can click on any of the 12 boxes. If a participant clicks on one of the boxes, the color is changed. Additionally the value boxX_click is being changed.
+*this then ensures that the color does not change again. In this case this trial branches to this trial again (trial is repeated until a new box is clicked), otherwise it branches to the trial trial_response
+*Additionally it captures the number of draws by adding +1 to the value draws_trial_XX.
+<trial trial_choose>
+/stimulusframes = [1= instruction, box1, box2, box3, box4, box5, box6, box7, box8, box9, box10, box11, box12, box13, box14, box15, box16, box17, box18, box19, box20, box21, box22, box23, box24, box25, box26, box27, box28, box29, box30, box31, box32, box33, box34, box35, box36, box37, box38, box39, box40, box41, box42, box43, box44, box45, box46, box47, box48, box49, box50,
+dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9, dot10, dot11, dot12, dot13, dot14, dot15, dot16, dot17, dot18, dot19, dot20, dot21, dot22, dot23, dot24, dot25, dot26, dot27, dot28, dot29, dot30, dot31, dot32, dot33, dot34, dot35, dot36, dot37, dot38, dot39, dot40, dot41, dot42, dot43, dot44, dot45, dot46, dot47, dot48, dot49, dot50, want_decision, responseoption_trialdecide_color1, responseoption_trialdecide_color2, OR]
+/inputdevice = mouse
+/validresponse = (box1, box2, box3, box4, box5, box6, box7, box8, box9, box10, box11, box12, box13, box14, box15, box16, box17, box18, box19, box20, box21, box22, box23, box24, box25, box26, box27, box28, box29, box30, box31, box32, box33, box34, box35, box36, box37, box38, box39, box40, box41, box42, box43, box44, box45, box46, box47, box48, box49, box50, responseoption_trialdecide_color1, responseoption_trialdecide_color2)
+/ontrialbegin = [shape.responseoption_trialdecide_color1.color = list.list_uniquecolor_left.item(values.current_list);
+				shape.responseoption_trialdecide_color2.color = list.list_uniquecolor_right.item(values.current_list)]
+/ontrialend = [values.incorrect=0;
+if (values.current_list == 1){values.draws_trial_01=values.current_click+1}
+else if (values.current_list == 2){values.draws_trial_02=values.current_click+1}
+else if (values.current_list == 3){values.draws_trial_03=values.current_click+1}
+else if (values.current_list == 4){values.draws_trial_04=values.current_click+1}
+else if (values.current_list == 5){values.draws_trial_05=values.current_click+1}
+else if (values.current_list == 6){values.draws_trial_06=values.current_click+1}
+else if (values.current_list == 7){values.draws_trial_07=values.current_click+1}
+else if (values.current_list == 8){values.draws_trial_08=values.current_click+1}
+else if (values.current_list == 9){values.draws_trial_09=values.current_click+1}
+else if (values.current_list == 10){values.draws_trial_10=values.current_click+1}
+else if (values.current_list == 11){values.draws_trial_11=values.current_click+1}
+else if (values.current_list == 12){values.draws_trial_12=values.current_click+1}
+else if (values.current_list == 13){values.draws_trial_13=values.current_click+1}
+else if (values.current_list == 14){values.draws_trial_14=values.current_click+1}
+else if (values.current_list == 15){values.draws_trial_15=values.current_click+1}
+else if (values.current_list == 16){values.draws_trial_16=values.current_click+1}
+else if (values.current_list == 17){values.draws_trial_17=values.current_click+1}
+else if (values.current_list == 18){values.draws_trial_18=values.current_click+1}
+else if (values.current_list == 19){values.draws_trial_19=values.current_click+1}
+else if (values.current_list == 20){values.draws_trial_20=values.current_click+1}; 
+values.current_click += 1;
+if (values.box1_click==0 && trial.trial_choose.response == "box1") {shape.dot1.color = list.masterlist.nextvalue; values.box1_click=1}
+else if (values.box2_click==0 && trial.trial_choose.response == "box2") {shape.dot2.color = list.masterlist.nextvalue; values.box2_click=1}
+else if (values.box3_click==0 && trial.trial_choose.response == "box3") {shape.dot3.color = list.masterlist.nextvalue; values.box3_click=1}
+else if (values.box4_click==0 && trial.trial_choose.response == "box4") {shape.dot4.color = list.masterlist.nextvalue; values.box4_click=1}
+else if (values.box5_click==0 && trial.trial_choose.response == "box5") {shape.dot5.color = list.masterlist.nextvalue; values.box5_click=1}
+else if (values.box6_click==0 && trial.trial_choose.response == "box6") {shape.dot6.color = list.masterlist.nextvalue; values.box6_click=1}
+else if (values.box7_click==0 && trial.trial_choose.response == "box7") {shape.dot7.color = list.masterlist.nextvalue; values.box7_click=1}
+else if (values.box8_click==0 && trial.trial_choose.response == "box8") {shape.dot8.color = list.masterlist.nextvalue; values.box8_click=1}
+else if (values.box9_click==0 && trial.trial_choose.response == "box9") {shape.dot9.color = list.masterlist.nextvalue; values.box9_click=1}
+else if (values.box10_click==0 && trial.trial_choose.response == "box10") {shape.dot10.color = list.masterlist.nextvalue; values.box10_click=1}
+else if (values.box11_click==0 && trial.trial_choose.response == "box11") {shape.dot11.color = list.masterlist.nextvalue; values.box11_click=1}
+else if (values.box12_click==0 && trial.trial_choose.response == "box12") {shape.dot12.color = list.masterlist.nextvalue; values.box12_click=1}
+else if (values.box13_click==0 && trial.trial_choose.response == "box13") {shape.dot13.color = list.masterlist.nextvalue; values.box13_click=1}
+else if (values.box14_click==0 && trial.trial_choose.response == "box14") {shape.dot14.color = list.masterlist.nextvalue; values.box14_click=1}
+else if (values.box15_click==0 && trial.trial_choose.response == "box15") {shape.dot15.color = list.masterlist.nextvalue; values.box15_click=1}
+else if (values.box16_click==0 && trial.trial_choose.response == "box16") {shape.dot16.color = list.masterlist.nextvalue; values.box16_click=1}
+else if (values.box17_click==0 && trial.trial_choose.response == "box17") {shape.dot17.color = list.masterlist.nextvalue; values.box17_click=1}
+else if (values.box18_click==0 && trial.trial_choose.response == "box18") {shape.dot18.color = list.masterlist.nextvalue; values.box18_click=1}
+else if (values.box19_click==0 && trial.trial_choose.response == "box19") {shape.dot19.color = list.masterlist.nextvalue; values.box19_click=1}
+else if (values.box20_click==0 && trial.trial_choose.response == "box20") {shape.dot20.color = list.masterlist.nextvalue; values.box20_click=1}
+else if (values.box21_click==0 && trial.trial_choose.response == "box21") {shape.dot21.color = list.masterlist.nextvalue; values.box21_click=1}
+else if (values.box22_click==0 && trial.trial_choose.response == "box22") {shape.dot22.color = list.masterlist.nextvalue; values.box22_click=1}
+else if (values.box23_click==0 && trial.trial_choose.response == "box23") {shape.dot23.color = list.masterlist.nextvalue; values.box23_click=1}
+else if (values.box24_click==0 && trial.trial_choose.response == "box24") {shape.dot24.color = list.masterlist.nextvalue; values.box24_click=1}
+else if (values.box25_click==0 && trial.trial_choose.response == "box25") {shape.dot25.color = list.masterlist.nextvalue; values.box25_click=1}
+else if (values.box26_click==0 && trial.trial_choose.response == "box26") {shape.dot26.color = list.masterlist.nextvalue; values.box26_click=1}
+else if (values.box27_click==0 && trial.trial_choose.response == "box27") {shape.dot27.color = list.masterlist.nextvalue; values.box27_click=1}
+else if (values.box28_click==0 && trial.trial_choose.response == "box28") {shape.dot28.color = list.masterlist.nextvalue; values.box28_click=1}
+else if (values.box29_click==0 && trial.trial_choose.response == "box29") {shape.dot29.color = list.masterlist.nextvalue; values.box29_click=1}
+else if (values.box30_click==0 && trial.trial_choose.response == "box30") {shape.dot30.color = list.masterlist.nextvalue; values.box30_click=1}
+else if (values.box31_click==0 && trial.trial_choose.response == "box31") {shape.dot31.color = list.masterlist.nextvalue; values.box31_click=1}
+else if (values.box32_click==0 && trial.trial_choose.response == "box32") {shape.dot32.color = list.masterlist.nextvalue; values.box32_click=1}
+else if (values.box33_click==0 && trial.trial_choose.response == "box33") {shape.dot33.color = list.masterlist.nextvalue; values.box33_click=1}
+else if (values.box34_click==0 && trial.trial_choose.response == "box34") {shape.dot34.color = list.masterlist.nextvalue; values.box34_click=1}
+else if (values.box35_click==0 && trial.trial_choose.response == "box35") {shape.dot35.color = list.masterlist.nextvalue; values.box35_click=1}
+else if (values.box36_click==0 && trial.trial_choose.response == "box36") {shape.dot36.color = list.masterlist.nextvalue; values.box36_click=1}
+else if (values.box37_click==0 && trial.trial_choose.response == "box37") {shape.dot37.color = list.masterlist.nextvalue; values.box37_click=1}
+else if (values.box38_click==0 && trial.trial_choose.response == "box38") {shape.dot38.color = list.masterlist.nextvalue; values.box38_click=1}
+else if (values.box39_click==0 && trial.trial_choose.response == "box39") {shape.dot39.color = list.masterlist.nextvalue; values.box39_click=1}
+else if (values.box40_click==0 && trial.trial_choose.response == "box40") {shape.dot40.color = list.masterlist.nextvalue; values.box40_click=1}
+else if (values.box41_click==0 && trial.trial_choose.response == "box41") {shape.dot41.color = list.masterlist.nextvalue; values.box41_click=1}
+else if (values.box42_click==0 && trial.trial_choose.response == "box42") {shape.dot42.color = list.masterlist.nextvalue; values.box42_click=1}
+else if (values.box43_click==0 && trial.trial_choose.response == "box43") {shape.dot43.color = list.masterlist.nextvalue; values.box43_click=1}
+else if (values.box44_click==0 && trial.trial_choose.response == "box44") {shape.dot44.color = list.masterlist.nextvalue; values.box44_click=1}
+else if (values.box45_click==0 && trial.trial_choose.response == "box45") {shape.dot45.color = list.masterlist.nextvalue; values.box45_click=1}
+else if (values.box46_click==0 && trial.trial_choose.response == "box46") {shape.dot46.color = list.masterlist.nextvalue; values.box46_click=1}
+else if (values.box47_click==0 && trial.trial_choose.response == "box47") {shape.dot47.color = list.masterlist.nextvalue; values.box47_click=1}
+else if (values.box48_click==0 && trial.trial_choose.response == "box48") {shape.dot48.color = list.masterlist.nextvalue; values.box48_click=1}
+else if (values.box49_click==0 && trial.trial_choose.response == "box49") {shape.dot49.color = list.masterlist.nextvalue; values.box49_click=1}
+else if (values.box50_click==0 && trial.trial_choose.response == "box50") {shape.dot50.color = list.masterlist.nextvalue; values.box50_click=1}
+else if (values.current_click=values.current_click-1)(values.incorrect=1);
+if (values.current_list == 1 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial01=list.colors_text_trial01.items.1;
+else if (values.current_list == 1 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial01=list.colors_text_trial01.items.2;
+else if (values.current_list == 2 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial02=list.colors_text_trial02.items.1;
+else if (values.current_list == 2 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial02=list.colors_text_trial02.items.2;
+else if (values.current_list == 3 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial03=list.colors_text_trial03.items.1;
+else if (values.current_list == 3 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial03=list.colors_text_trial03.items.2;
+else if (values.current_list == 4 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial04=list.colors_text_trial04.items.1;
+else if (values.current_list == 4 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial04=list.colors_text_trial04.items.2;
+else if (values.current_list == 5 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial05=list.colors_text_trial05.items.1;
+else if (values.current_list == 5 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial05=list.colors_text_trial05.items.2;
+else if (values.current_list == 6 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial06=list.colors_text_trial06.items.1;
+else if (values.current_list == 6 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial06=list.colors_text_trial06.items.2;
+else if (values.current_list == 7 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial07=list.colors_text_trial07.items.1;
+else if (values.current_list == 7 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial07=list.colors_text_trial07.items.2;
+else if (values.current_list == 8 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial08=list.colors_text_trial08.items.1;
+else if (values.current_list == 8 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial08=list.colors_text_trial08.items.2;
+else if (values.current_list == 9 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial09=list.colors_text_trial09.items.1;
+else if (values.current_list == 9 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial09=list.colors_text_trial09.items.2;
+else if (values.current_list == 10 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial10=list.colors_text_trial10.items.1;
+else if (values.current_list == 10 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial10=list.colors_text_trial10.items.2;
+else if (values.current_list == 11 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial11=list.colors_text_trial11.items.2;
+else if (values.current_list == 11 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial11=list.colors_text_trial11.items.1;
+else if (values.current_list == 12 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial12=list.colors_text_trial12.items.1;
+else if (values.current_list == 12 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial12=list.colors_text_trial12.items.2;
+else if (values.current_list == 13 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial13=list.colors_text_trial13.items.1;
+else if (values.current_list == 13 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial13=list.colors_text_trial13.items.2;
+else if (values.current_list == 14 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial14=list.colors_text_trial14.items.1;
+else if (values.current_list == 14 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial14=list.colors_text_trial14.items.2;
+else if (values.current_list == 15 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial15=list.colors_text_trial15.items.1;
+else if (values.current_list == 15 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial15=list.colors_text_trial15.items.2;
+else if (values.current_list == 16 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial16=list.colors_text_trial16.items.1;
+else if (values.current_list == 16 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial16=list.colors_text_trial16.items.2;
+else if (values.current_list == 17 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial17=list.colors_text_trial17.items.1;
+else if (values.current_list == 17 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial17=list.colors_text_trial17.items.2;
+else if (values.current_list == 18 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial18=list.colors_text_trial18.items.1;
+else if (values.current_list == 18 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial18=list.colors_text_trial18.items.2;
+else if (values.current_list == 19 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial19=list.colors_text_trial19.items.1;
+else if (values.current_list == 19 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial19=list.colors_text_trial19.items.2;
+else if (values.current_list == 20 && trial.trial_choose.response == "responseoption_trialdecide_color1") values.colordecision_trial20=list.colors_text_trial20.items.1;
+else if (values.current_list == 20 && trial.trial_choose.response == "responseoption_trialdecide_color2") values.colordecision_trial20=list.colors_text_trial20.items.2;
+if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 1) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 2) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 3) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 4) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 5) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 6) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 7) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 8) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 9) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 10) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 11) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 12) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 13) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 14) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 15) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 16) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 17) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 18) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 19) values.endblock = 1;
+else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || trial.trial_choose.response == "responseoption_trialdecide_color2") && values.current_list == 20) values.endblock = 1]
+/branch= [if (values.current_click>list_length) trial.trial1_too_late
+else if (values.incorrect==1) trial.trial_choose]
+/ skip=[values.endblock == 1]
+/ skip=[values.current_click>list_length+1]
+</trial>
+
+
+*These lists are necessary to manually call the items from color_sequence_trial01, color_sequence_trial02, and color_sequence_trial03
+<list masterlist>
+/ items = (list.color_sequence_trial01.nextvalue, 
+list.color_sequence_trial02.nextvalue,
+list.color_sequence_trial03.nextvalue,
+list.color_sequence_trial04.nextvalue,
+list.color_sequence_trial05.nextvalue,
+list.color_sequence_trial06.nextvalue,
+list.color_sequence_trial07.nextvalue,
+list.color_sequence_trial08.nextvalue,
+list.color_sequence_trial09.nextvalue, 
+list.color_sequence_trial10.nextvalue,
+list.color_sequence_trial11.nextvalue, 
+list.color_sequence_trial12.nextvalue,
+list.color_sequence_trial13.nextvalue,
+list.color_sequence_trial14.nextvalue,
+list.color_sequence_trial15.nextvalue,
+list.color_sequence_trial16.nextvalue,
+list.color_sequence_trial17.nextvalue,
+list.color_sequence_trial18.nextvalue,
+list.color_sequence_trial19.nextvalue,
+list.color_sequence_trial20.nextvalue)
+/ selectionmode = (values.current_list)
+</list>
+
+<list list_length>
+/ items = (list.color_sequence_trial01.itemcount, 
+list.color_sequence_trial02.itemcount, 
+list.color_sequence_trial03.itemcount,
+list.color_sequence_trial04.itemcount,
+list.color_sequence_trial05.itemcount,
+list.color_sequence_trial06.itemcount,
+list.color_sequence_trial07.itemcount,
+list.color_sequence_trial08.itemcount,
+list.color_sequence_trial09.itemcount,
+list.color_sequence_trial10.itemcount,
+list.color_sequence_trial11.itemcount,
+list.color_sequence_trial12.itemcount,
+list.color_sequence_trial13.itemcount,
+list.color_sequence_trial14.itemcount,
+list.color_sequence_trial15.itemcount,
+list.color_sequence_trial16.itemcount,
+list.color_sequence_trial17.itemcount,
+list.color_sequence_trial18.itemcount,
+list.color_sequence_trial19.itemcount,
+list.color_sequence_trial20.itemcount)
+/ selectionmode = (values.current_list)
+</list>
+
+<list list_colornames_left>
+/ items = (list.colors_text_trial01.items.1, 
+list.colors_text_trial02.items.1,
+list.colors_text_trial03.items.1,
+list.colors_text_trial04.items.1,
+list.colors_text_trial05.items.1,
+list.colors_text_trial06.items.1,
+list.colors_text_trial07.items.1,
+list.colors_text_trial08.items.1,
+list.colors_text_trial09.items.1,
+list.colors_text_trial10.items.1,
+list.colors_text_trial11.items.1,
+list.colors_text_trial12.items.1,
+list.colors_text_trial13.items.1,
+list.colors_text_trial14.items.1,
+list.colors_text_trial15.items.1,
+list.colors_text_trial16.items.1,
+list.colors_text_trial17.items.1,
+list.colors_text_trial18.items.1,
+list.colors_text_trial19.items.1, 
+list.colors_text_trial20.items.1)
+/ selectionmode = (values.current_list)
+</list>
+
+<list list_colornames_right>
+/ items = (list.colors_text_trial01.items.2, 
+list.colors_text_trial02.items.2,
+list.colors_text_trial03.items.2, 
+list.colors_text_trial04.items.2, 
+list.colors_text_trial05.items.2,
+list.colors_text_trial06.items.2, 
+list.colors_text_trial07.items.2, 
+list.colors_text_trial08.items.2, 
+list.colors_text_trial09.items.2, 
+list.colors_text_trial10.items.2, 
+list.colors_text_trial11.items.2, 
+list.colors_text_trial12.items.2, 
+list.colors_text_trial13.items.2, 
+list.colors_text_trial14.items.2, 
+list.colors_text_trial15.items.2, 
+list.colors_text_trial16.items.2, 
+list.colors_text_trial17.items.2, 
+list.colors_text_trial18.items.2, 
+list.colors_text_trial19.items.2,   
+list.colors_text_trial20.items.2)
+/ selectionmode = (values.current_list)
+</list>
+
+<list list_uniquecolor_left>
+/ items = (list.colors_unique_trial01.items.1, 
+list.colors_unique_trial02.items.1, 
+list.colors_unique_trial03.items.1, 
+list.colors_unique_trial04.items.1, 
+list.colors_unique_trial05.items.1, 
+list.colors_unique_trial06.items.1, 
+list.colors_unique_trial07.items.1, 
+list.colors_unique_trial08.items.1, 
+list.colors_unique_trial09.items.1, 
+list.colors_unique_trial10.items.1, 
+list.colors_unique_trial11.items.1, 
+list.colors_unique_trial12.items.1, 
+list.colors_unique_trial13.items.1, 
+list.colors_unique_trial14.items.1, 
+list.colors_unique_trial15.items.1, 
+list.colors_unique_trial16.items.1, 
+list.colors_unique_trial17.items.1, 
+list.colors_unique_trial18.items.1, 
+list.colors_unique_trial19.items.1, 
+list.colors_unique_trial20.items.1)
+/ selectionmode = (values.current_list)
+</list>
+
+<list list_uniquecolor_right>
+/ items = (list.colors_unique_trial01.items.2, 
+list.colors_unique_trial02.items.2, 
+list.colors_unique_trial03.items.2, 
+list.colors_unique_trial04.items.2, 
+list.colors_unique_trial05.items.2, 
+list.colors_unique_trial06.items.2, 
+list.colors_unique_trial07.items.2, 
+list.colors_unique_trial08.items.2, 
+list.colors_unique_trial09.items.2, 
+list.colors_unique_trial10.items.2, 
+list.colors_unique_trial11.items.2, 
+list.colors_unique_trial12.items.2, 
+list.colors_unique_trial13.items.2, 
+list.colors_unique_trial14.items.2, 
+list.colors_unique_trial15.items.2, 
+list.colors_unique_trial16.items.2, 
+list.colors_unique_trial17.items.2, 
+list.colors_unique_trial18.items.2, 
+list.colors_unique_trial19.items.2, 
+list.colors_unique_trial20.items.2)
+/ selectionmode = (values.current_list)
+</list>
+
+*One block is one "trial", meaning one sequence in the box task. This block is reapeated for each sequence.
+<block boxtask_pressure50>
+/trials = [1= trial_start; 2-52=trial_choose]
+/stop = [values.current_click > list_length +1|| values.endblock==1]
+/onblockbegin = [values.current_list = list.trial_sequence.nextvalue;
+values.sequence = concat(concat(values.sequence,values.current_list), ", ");]
+</block>
+
+*This list determines, whether the different order of sequences are presented in sequence (first color_sequence_trial01, then color_sequence_trial02 etc.) or in random order (i.e., position of color_sequence_trial01 is randomly determined).
+*to have sequences presented in sequence, set /selectionmode = sequence. To have sequences presented in random order, set /selectionmode = random
+<list trial_sequence>
+/items = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+/selectionmode = sequence
+</list>
+
+
+
+*This runs the experiment. Here is defined, how many trials/sequences the participant should do. This is defined by the number of blocks (default: 1-20; this means 20 trials/sequences) 
+<expt experiment>
+/blocks = [1-20=boxtask_pressure50]
+/preinstructions = (instructions_pressure12_long, Reminder_Pressure)
+/onblockbegin = [values.incorrect=0;  
+values.current_click = 0;
+values.endblock = 0;
+values.box1_click = 0;
+values.box2_click = 0;
+values.box3_click = 0;
+values.box4_click = 0;
+values.box5_click = 0;
+values.box6_click = 0;
+values.box7_click = 0;
+values.box8_click = 0;
+values.box9_click = 0;
+values.box10_click = 0;
+values.box11_click = 0;
+values.box12_click = 0;
+values.box13_click = 0;
+values.box14_click = 0;
+values.box15_click = 0;
+values.box16_click = 0;
+values.box17_click = 0;
+values.box18_click = 0;
+values.box19_click = 0;
+values.box20_click = 0;
+values.box21_click = 0;
+values.box22_click = 0;
+values.box23_click = 0;
+values.box24_click = 0;
+values.box25_click = 0;
+values.box26_click = 0;
+values.box27_click = 0;
+values.box28_click = 0;
+values.box29_click = 0;
+values.box30_click = 0;
+values.box31_click = 0;
+values.box32_click = 0;
+values.box33_click = 0;
+values.box34_click = 0;
+values.box35_click = 0;
+values.box36_click = 0;
+values.box37_click = 0;
+values.box38_click = 0;
+values.box39_click = 0;
+values.box40_click = 0;
+values.box41_click = 0;
+values.box42_click = 0;
+values.box43_click = 0;
+values.box44_click = 0;
+values.box45_click = 0;
+values.box46_click = 0;
+values.box47_click = 0;
+values.box48_click = 0;
+values.box49_click = 0;
+values.box50_click = 0; 
+values.box51_click = 0;
+values.box52_click = 0;
+values.box53_click = 0;
+values.box54_click = 0;
+values.box55_click = 0;
+values.box56_click = 0;
+values.box57_click = 0;
+values.box58_click = 0;
+values.box59_click = 0;
+values.box60_click = 0;
+values.box61_click = 0;
+values.box62_click = 0;
+values.box63_click = 0;
+values.box64_click = 0;
+shape.dot1.color = black;
+shape.dot2.color = black;
+shape.dot3.color = black;
+shape.dot4.color = black;
+shape.dot5.color = black;
+shape.dot6.color = black;
+shape.dot7.color = black;
+shape.dot8.color = black;
+shape.dot9.color = black;
+shape.dot10.color = black;
+shape.dot11.color = black;
+shape.dot12.color = black;
+shape.dot13.color = black;
+shape.dot14.color = black;
+shape.dot15.color = black;
+shape.dot16.color = black;
+shape.dot17.color = black;
+shape.dot18.color = black;
+shape.dot19.color = black;
+shape.dot20.color = black;
+shape.dot21.color = black;
+shape.dot22.color = black;
+shape.dot23.color = black;
+shape.dot24.color = black;
+shape.dot25.color = black;
+shape.dot26.color = black;
+shape.dot27.color = black;
+shape.dot28.color = black;
+shape.dot29.color = black;
+shape.dot30.color = black;
+shape.dot31.color = black;
+shape.dot32.color = black;
+shape.dot33.color = black;
+shape.dot34.color = black;
+shape.dot35.color = black;
+shape.dot36.color = black;
+shape.dot37.color = black;
+shape.dot38.color = black;
+shape.dot39.color = black;
+shape.dot40.color = black;
+shape.dot41.color = black;
+shape.dot42.color = black;
+shape.dot43.color = black;
+shape.dot44.color = black;
+shape.dot45.color = black;
+shape.dot46.color = black;
+shape.dot47.color = black;
+shape.dot48.color = black;
+shape.dot49.color = black;
+shape.dot50.color = black;
+shape.dot51.color = black;
+shape.dot52.color = black;
+shape.dot53.color = black;
+shape.dot54.color = black;
+shape.dot55.color = black;
+shape.dot56.color = black;
+shape.dot57.color = black;
+shape.dot58.color = black;
+shape.dot59.color = black;
+shape.dot60.color = black;
+shape.dot61.color = black;
+shape.dot62.color = black;
+shape.dot63.color = black;
+shape.dot64.color = black;
+]
+</expt>
+
+** Definition of values
+<values>
+/draws_trial_01=-88
+/draws_trial_02=-88
+/draws_trial_03=-88
+/draws_trial_04=-88
+/draws_trial_05=-88
+/draws_trial_06=-88
+/draws_trial_07=-88
+/draws_trial_08=-88
+/draws_trial_09=-88
+/draws_trial_10=-88
+/draws_trial_11=-88
+/draws_trial_12=-88
+/draws_trial_13=-88
+/draws_trial_14=-88
+/draws_trial_15=-88
+/draws_trial_16=-88
+/draws_trial_17=-88
+/draws_trial_18=-88
+/draws_trial_19=-88
+/draws_trial_20=-88
+/incorrect=0 
+/current_click = 0
+/endblock = 0
+/box1_click = 0 
+/box2_click = 0
+/box3_click = 0
+/box4_click = 0
+/box5_click = 0
+/box6_click = 0
+/box7_click = 0
+/box8_click = 0
+/box9_click = 0
+/box10_click = 0
+/box11_click = 0
+/box12_click = 0
+/box13_click = 0
+/box14_click = 0
+/box15_click = 0
+/box16_click = 0
+/box17_click = 0
+/box18_click = 0
+/box19_click = 0
+/box20_click = 0
+/box21_click = 0
+/box22_click = 0
+/box23_click = 0
+/box24_click = 0
+/box25_click = 0
+/box26_click = 0
+/box27_click = 0
+/box28_click = 0
+/box29_click = 0
+/box30_click = 0
+/box31_click = 0
+/box32_click = 0
+/box33_click = 0
+/box34_click = 0
+/box35_click = 0
+/box36_click = 0
+/box37_click = 0
+/box38_click = 0
+/box39_click = 0
+/box40_click = 0
+/box41_click = 0
+/box42_click = 0
+/box43_click = 0
+/box44_click = 0
+/box45_click = 0
+/box46_click = 0
+/box47_click = 0
+/box48_click = 0
+/box49_click = 0
+/box50_click = 0
+/dummy = 0
+/current_list =0
+/ sequence = ""
+/colordecision_trial01=-88
+/colordecision_trial02=-88
+/colordecision_trial03=-88
+/colordecision_trial04=-88
+/colordecision_trial05=-88
+/colordecision_trial06=-88
+/colordecision_trial07=-88
+/colordecision_trial08=-88
+/colordecision_trial09=-88
+/colordecision_trial10=-88
+/colordecision_trial11=-88
+/colordecision_trial12=-88
+/colordecision_trial13=-88
+/colordecision_trial14=-88
+/colordecision_trial15=-88
+/colordecision_trial16=-88
+/colordecision_trial17=-88
+/colordecision_trial18=-88
+/colordecision_trial19=-88
+/colordecision_trial20=-88
+</values>
+
+*summary data
+ <summarydata>
+/ encrypt = false
+/ separatefiles = false
+/ columns = [script.subjectid, script.groupid, script.elapsedtime, script.startdate, script.starttime, 
+values.draws_trial_01, 
+values.draws_trial_02, 
+values.draws_trial_03, 
+values.draws_trial_04, 
+values.draws_trial_05, 
+values.draws_trial_06,
+values.draws_trial_07, 
+values.draws_trial_08, 
+values.draws_trial_09,
+values.draws_trial_10,
+values.draws_trial_11, 
+values.draws_trial_12, 
+values.draws_trial_13, 
+values.draws_trial_14, 
+values.draws_trial_15, 
+values.draws_trial_16,
+values.draws_trial_17, 
+values.draws_trial_18, 
+values.draws_trial_19,
+values.draws_trial_20,
+values.colordecision_trial01, 
+values.colordecision_trial02, 
+values.colordecision_trial03,
+values.colordecision_trial04, 
+values.colordecision_trial05, 
+values.colordecision_trial06,
+values.colordecision_trial07, 
+values.colordecision_trial08, 
+values.colordecision_trial09,
+values.colordecision_trial10, 
+values.colordecision_trial11, 
+values.colordecision_trial12,
+values.colordecision_trial13, 
+values.colordecision_trial14, 
+values.colordecision_trial15,
+values.colordecision_trial16, 
+values.colordecision_trial17, 
+values.colordecision_trial18,
+values.colordecision_trial19, 
+values.colordecision_trial20,
+values.sequence]
+</summarydata> 
+
+<defaults>
+/ canvasaspectratio = (16,9)
+/ canvassize = (95%,100%)
+</defaults>
