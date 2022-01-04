@@ -1,4 +1,26 @@
-﻿ **************************************************************************************************************
+Scheunemann_inquisit_6_Script.txt
+Who has access
+Not shared
+System properties
+Type
+Text
+Size
+103 KB
+Storage used
+103 KB
+Location
+Inquisit 6
+Owner
+me
+Modified
+10:08 AM by me
+Opened
+10:38 AM by me
+Created
+10:04 AM with Google Drive Web
+Add a description
+Viewers can download
+﻿**************************************************************************************************************
 **************************************************************************************************************
 **************************************************************************************************************
 	The Box Task as described in Moritz, S., Göritz, A. S., Balzan, R. P., Gawęda, Ł., Kulagin, S. C., & Andreou, C. (2017). 
@@ -26,11 +48,11 @@
 **************************************************************************************************************
 	About this script: 
 	This script displays the box task with 12 boxes, with up to 20 trials. 
-	After a box opens, the participant can decide wether to open more boxes or to continue with a decision.
+	After a box opens, the participant can decide whether to open more boxes or to continue with a decision.
 	If the participant decides to have enough information, they can answer the likelihood for the color, decide for a color and rate confidence.
  
-	Changebable parameters:
-	The sequences and lengths of each trials can be determined easily.
+	Changeable parameters:
+	The sequences and lengths of each trial can be determined easily.
 	The instructions can be changed/translated easily.
 	The likert scale for likelihood rating and confidence rating can be changed.
 	The number of trials can be determined (see element "expt")
@@ -49,14 +71,14 @@
 	The sequence can be up to 12 items long. If the number of items is less than 12, the box task become the pressure
 	version automatically. That means, if the participant wants to open more boxes than items in the list, the trial ends.
 
-	The sequence of colors is being defined, indepenedly from where the participant clicks.
+	The sequence of colors is being defined, independently from where the participant clicks.
 
 	Additionally, the unique two colors in each trial need to be defined in colors_unique_trialXX.
 
 	Additionally, the colors need to be defined in text format in colors_text_trialXX. If the experiment should be run in another
 	language than English, insert color names in the corresponding language.
 
-	If one prefers less than 20 trials, paramaters in element expt need to be changes below. Either delete all unused list elements or 
+	If one prefers less than 20 trials, parameters in element expt need to be changes below. Either delete all unused list elements or 
 	fill them with any colors.
 
 	For different colors see: https://www.millisecond.com/support/docs/v6/html/language/colors.htm
@@ -65,8 +87,8 @@
 **************************************************************************************************************
 
 *This list defines the sequence in trial 01. For example, if sequence reads: "/items = (yellow, blue, yellow, yellow, blue)", the participant sees
-*the color yellow for the first box they opens (no matter which of the 12). The second box will be blue. This trial will end, when the participant
-*requests to see a sixth box, as the number of elements in this list is 5. In this case, the participant is refered to the next trial. 
+*the color yellow for the first box they open (no matter which of the 12). The second box will be blue. This trial will end, when the participant
+*requests to see a sixth box, as the number of elements in this list is 5. In this case, the participant is referred to the next trial. 
 *Please note: If one prefers to have a no-pressure condition, simply make sure to have 12 items in each list and to change the instructions accordingly. 
 <list color_sequence_trial01> 
 / items = (orange, purple, purple, orange, orange, purple, orange, orange, orange, orange, purple, orange, orange, purple, orange, purple, orange, orange)
@@ -490,6 +512,724 @@
 / erase = false
 </text>
 
+****
+<text text_decidedcolor_probability01>
+/items = ("<% values.colordecision_trial01 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability02>
+/items = ("<% values.colordecision_trial02 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability03>
+/items = ("<% values.colordecision_trial03 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability04>
+/items = ("<% values.colordecision_trial04 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability05>
+/items = ("<% values.colordecision_trial05 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability06>
+/items = ("<% values.colordecision_trial06 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability07>
+/items = ("<% values.colordecision_trial07 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability08>
+/items = ("<% values.colordecision_trial08 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability09>
+/items = ("<% values.colordecision_trial09 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability10>
+/items = ("<% values.colordecision_trial10 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability11>
+/items = ("<% values.colordecision_trial11 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability12>
+/items = ("<% values.colordecision_trial12 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability13>
+/items = ("<% values.colordecision_trial13 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability14>
+/items = ("<% values.colordecision_trial14 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability15>
+/items = ("<% values.colordecision_trial15 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability16>
+/items = ("<% values.colordecision_trial16 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability17>
+/items = ("<% values.colordecision_trial17 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability18>
+/items = ("<% values.colordecision_trial18 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability19>
+/items = ("<% values.colordecision_trial19 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_probability20>
+/items = ("<% values.colordecision_trial20 %>)")
+/ position = (86.1%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+***
+<text text_decidedcolor_confidence01>
+/items = ("<% values.colordecision_trial01 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_confidence02>
+/items = ("<% values.colordecision_trial02 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_confidence03>
+/items = ("<% values.colordecision_trial03 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_confidence04>
+/items = ("<% values.colordecision_trial04 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_confidence05>
+/items = ("<% values.colordecision_trial05 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_confidence06>
+/items = ("<% values.colordecision_trial06 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_confidence07>
+/items = ("<% values.colordecision_trial07 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_confidence08>
+/items = ("<% values.colordecision_trial08 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+
+<text text_decidedcolor_confidence09>
+/items = ("<% values.colordecision_trial09 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_confidence10>
+/items = ("<% values.colordecision_trial10 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_confidence11>
+/items = ("<% values.colordecision_trial11 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_confidence12>
+/items = ("<% values.colordecision_trial12 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+
+<text text_decidedcolor_confidence13>
+/items = ("<% values.colordecision_trial13 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_confidence14>
+/items = ("<% values.colordecision_trial14 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_confidence15>
+/items = ("<% values.colordecision_trial15 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_confidence16>
+/items = ("<% values.colordecision_trial16 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+
+<text text_decidedcolor_confidence17>
+/items = ("<% values.colordecision_trial17 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_confidence18>
+/items = ("<% values.colordecision_trial18 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_confidence19>
+/items = ("<% values.colordecision_trial19 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+<text text_decidedcolor_confidence20>
+/items = ("<% values.colordecision_trial20 %>)")
+/ position = (69.5%, 93.5%)
+/ halign = left
+/ fontstyle = ("Calibri", 2.6%)
+</text>
+
+
+
+**************************************************************************************************************
+**************************************************************************************************************
+**************************************************************************************************************
+**********************     LIKERT SCALES    ******************************************************************
+**************************************************************************************************************
+**************************************************************************************************************
+**************************************************************************************************************
+
+***Likert scales need to be defined per trial. If all 20 trials are used, changes to the scales need to be done for all trials.
+*** likert probability scale for trial 01
+<likert likert_probability01>
+/ anchors = [1= "100% sure yellow"; 2= "90% sure yellow"; 3= "80% sure yellow"; 4= "70% sure yellow"; 5="60% sure yellow"; 6="undecided"; 7= "60% sure blue"; 8="70% sure blue", 9="80% sure blue"; 10= "90% sure blue"; 11 = "100% sure blue"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability01]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50, 99)
+/ branch = [likert.confidence01]
+</likert>
+
+*** likert confidence scale for trial 01
+<likert confidence01>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence01]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+
+<likert likert_probability02>
+/ anchors = [1= "100% sure green"; 2= "90% sure green"; 3= "80% sure green"; 4= "70% sure green"; 5="60% sure green"; 6="undecided"; 7= "60% sure red"; 8="70% sure red", 9="80% sure red"; 10= "90% sure red"; 11 = "100% sure red"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability02]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence02]
+</likert>
+
+<likert confidence02>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence02]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+<likert likert_probability03>
+/ anchors = [1= "100% sure orange"; 2= "90% sure orange"; 3= "80% sure orange"; 4= "70% sure orange"; 5="60% sure orange"; 6="undecided"; 7= "60% sure pink"; 8="70% sure pink", 9="80% sure pink"; 10= "90% sure pink"; 11 = "100% sure pink"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability03]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence03]
+</likert>
+
+<likert confidence03>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence03]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+<likert likert_probability04>
+/ anchors = [1= "100% sure purple"; 2= "90% sure purple"; 3= "80% sure purple"; 4= "70% sure purple"; 5="60% sure purple"; 6="undecided"; 7= "60% sure grey"; 8="70% sure grey", 9="80% sure grey"; 10= "90% sure grey"; 11 = "100% sure grey"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability04]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence04]
+</likert>
+
+
+<likert confidence04>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence04]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+<likert likert_probability05>
+/ anchors = [1= "100% sure green"; 2= "90% sure green"; 3= "80% sure green"; 4= "70% sure green"; 5="60% sure green"; 6="undecided"; 7= "60% sure red"; 8="70% sure red", 9="80% sure red"; 10= "90% sure red"; 11 = "100% sure red"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability05]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence05]
+</likert>
+
+<likert confidence05>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence05]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+<likert likert_probability06>
+/ anchors = [1= "100% sure orange"; 2= "90% sure orange"; 3= "80% sure orange"; 4= "70% sure orange"; 5="60% sure orange"; 6="undecided"; 7= "60% sure pink"; 8="70% sure pink", 9="80% sure pink"; 10= "90% sure pink"; 11 = "100% sure pink"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability06]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence06]
+</likert>
+
+<likert confidence06>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence06]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+<likert likert_probability07>
+/ anchors = [1= "100% sure yellow"; 2= "90% sure yellow"; 3= "80% sure yellow"; 4= "70% sure yellow"; 5="60% sure yellow"; 6="undecided"; 7= "60% sure blue"; 8="70% sure blue", 9="80% sure blue"; 10= "90% sure blue"; 11 = "100% sure blue"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability07]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence07]
+</likert>
+
+<likert confidence07>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence07]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+<likert likert_probability08>
+/ anchors = [1= "100% sure green"; 2= "90% sure green"; 3= "80% sure green"; 4= "70% sure green"; 5="60% sure green"; 6="undecided"; 7= "60% sure red"; 8="70% sure red", 9="80% sure red"; 10= "90% sure red"; 11 = "100% sure red"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability08]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence08]
+</likert>
+
+<likert confidence08>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence08]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+<likert likert_probability09>
+/ anchors = [1= "100% sure orange"; 2= "90% sure orange"; 3= "80% sure orange"; 4= "70% sure orange"; 5="60% sure orange"; 6="undecided"; 7= "60% sure pink"; 8="70% sure pink", 9="80% sure pink"; 10= "90% sure pink"; 11 = "100% sure pink"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability09]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence09]
+</likert>
+
+<likert confidence09>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence09]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+<likert likert_probability10>
+/ anchors = [1= "100% sure orange"; 2= "90% sure orange"; 3= "80% sure orange"; 4= "70% sure orange"; 5="60% sure orange"; 6="undecided"; 7= "60% sure pink"; 8="70% sure pink", 9="80% sure pink"; 10= "90% sure pink"; 11 = "100% sure pink"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability10]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence10]
+</likert>
+
+<likert confidence10>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence10]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+<likert likert_probability11>
+/ anchors = [1= "100% sure yellow"; 2= "90% sure yellow"; 3= "80% sure yellow"; 4= "70% sure yellow"; 5="60% sure yellow"; 6="undecided"; 7= "60% sure blue"; 8="70% sure blue", 9="80% sure blue"; 10= "90% sure blue"; 11 = "100% sure blue"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability11]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence11]
+</likert>
+
+<likert confidence11>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence11]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+<likert likert_probability12>
+/ anchors = [1= "100% sure green"; 2= "90% sure green"; 3= "80% sure green"; 4= "70% sure green"; 5="60% sure green"; 6="undecided"; 7= "60% sure red"; 8="70% sure red", 9="80% sure red"; 10= "90% sure red"; 11 = "100% sure red"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability12]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence12]
+</likert>
+
+<likert confidence12>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence12]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+<likert likert_probability13>
+/ anchors = [1= "100% sure orange"; 2= "90% sure orange"; 3= "80% sure orange"; 4= "70% sure orange"; 5="60% sure orange"; 6="undecided"; 7= "60% sure pink"; 8="70% sure pink", 9="80% sure pink"; 10= "90% sure pink"; 11 = "100% sure pink"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability13]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence13]
+</likert>
+
+<likert confidence13>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence13]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+<likert likert_probability14>
+/ anchors = [1= "100% sure yellow"; 2= "90% sure yellow"; 3= "80% sure yellow"; 4= "70% sure yellow"; 5="60% sure yellow"; 6="undecided"; 7= "60% sure blue"; 8="70% sure blue", 9="80% sure blue"; 10= "90% sure blue"; 11 = "100% sure blue"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability14]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence14]
+</likert>
+
+<likert confidence14>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence14]
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+<likert likert_probability15>
+/ anchors = [1= "100% sure green"; 2= "90% sure green"; 3= "80% sure green"; 4= "70% sure green"; 5="60% sure green"; 6="undecided"; 7= "60% sure red"; 8="70% sure red", 9="80% sure red"; 10= "90% sure red"; 11 = "100% sure red"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability15]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence15]
+</likert>
+
+<likert confidence15>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence15]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+<likert likert_probability16>
+/ anchors = [1= "100% sure orange"; 2= "90% sure orange"; 3= "80% sure orange"; 4= "70% sure orange"; 5="60% sure orange"; 6="undecided"; 7= "60% sure pink"; 8="70% sure pink", 9="80% sure pink"; 10= "90% sure pink"; 11 = "100% sure pink"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability16]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence16]
+</likert>
+
+<likert confidence16>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence16]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+<likert likert_probability17>
+/ anchors = [1= "100% sure yellow"; 2= "90% sure yellow"; 3= "80% sure yellow"; 4= "70% sure yellow"; 5="60% sure yellow"; 6="undecided"; 7= "60% sure blue"; 8="70% sure blue", 9="80% sure blue"; 10= "90% sure blue"; 11 = "100% sure blue"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability17]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence17]
+</likert>
+
+<likert confidence17>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence17]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+<likert likert_probability18>
+/ anchors = [1= "100% sure green"; 2= "90% sure green"; 3= "80% sure green"; 4= "70% sure green"; 5="60% sure green"; 6="undecided"; 7= "60% sure red"; 8="70% sure red", 9="80% sure red"; 10= "90% sure red"; 11 = "100% sure red"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability18]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence18]
+</likert>
+
+<likert confidence18>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence18]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+<likert likert_probability19>
+/ anchors = [1= "100% sure orange"; 2= "90% sure orange"; 3= "80% sure orange"; 4= "70% sure orange"; 5="60% sure orange"; 6="undecided"; 7= "60% sure pink"; 8="70% sure pink", 9="80% sure pink"; 10= "90% sure pink"; 11 = "100% sure pink"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability19]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence19]
+</likert>
+
+<likert confidence19>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence19]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
+
+<likert likert_probability20>
+/ anchors = [1= "100% sure orange"; 2= "90% sure orange"; 3= "80% sure orange"; 4= "70% sure orange"; 5="60% sure orange"; 6="undecided"; 7= "60% sure pink"; 8="70% sure pink", 9="80% sure pink"; 10= "90% sure pink"; 11 = "100% sure pink"]
+/ stimulusframes = [1 = responseoption_trialdecide_erase1, responseoption_trialdecide_erase2, probability, text_decidedcolor_probability20]
+/ beginresponseframe = 2
+/ fontstyle = ("Calibri", 1.7%)
+/ numpoints = 11
+/ inputdevice = mouse 
+/ position = (50,99)
+/ branch = [likert.confidence20]
+</likert>
+
+<likert confidence20>
+/ anchors = [1= "highly confident"; 2= "quite confident"; 3= "not very confident"; 4= "guessed"]
+/ stimulusframes = [1 = confidence, text_decidedcolor_confidence20]
+/ fontstyle = ("Calibri", 1.7%)
+/ inputdevice = mouse 
+/ numpoints = 4
+/ position = (50,99)
+/ ontrialend = [values.endblock = 1]
+</likert>
 
 **************************************************************************************************************
 **************************************************************************************************************
@@ -613,7 +1353,7 @@
 
 
 ***********************************************************
-*Definition of 64 boxes
+*Definition of 50 boxes
 *************************First row*************************
 <shape box1>
 /shape = rectangle
@@ -679,13 +1419,11 @@
 /erase = false
 </shape>
 
-*************************Second row*************************
-
 <shape box9>
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space1X, values.row2PosY)
+/position = (values.rowPosX + values.space9X, values.row1PosY)
 /erase = false
 </shape>
 
@@ -693,15 +1431,16 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space2X, values.row2PosY)
+/position = (values.rowPosX + values.space10X, values.row1PosY)
 /erase = false
 </shape>
 
+*************************Second row*************************
 <shape box11>
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space3X, values.row2PosY)
+/position = (values.rowPosX + values.space1X, values.row2PosY)
 /erase = false
 </shape>
 
@@ -709,7 +1448,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space4X, values.row2PosY)
+/position = (values.rowPosX + values.space2X, values.row2PosY)
 /erase = false
 </shape>
 
@@ -717,7 +1456,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space5X, values.row2PosY)
+/position = (values.rowPosX + values.space3X, values.row2PosY)
 /erase = false
 </shape>
 
@@ -725,7 +1464,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space6X, values.row2PosY)
+/position = (values.rowPosX + values.space4X, values.row2PosY)
 /erase = false
 </shape>
 
@@ -733,7 +1472,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space7X, values.row2PosY)
+/position = (values.rowPosX + values.space5X, values.row2PosY)
 /erase = false
 </shape>
 
@@ -741,17 +1480,15 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space8X, values.row2PosY)
+/position = (values.rowPosX + values.space6X, values.row2PosY)
 /erase = false
 </shape>
-
-*************************Third row*************************
 
 <shape box17>
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space1X, values.row3PosY)
+/position = (values.rowPosX + values.space7X, values.row2PosY)
 /erase = false
 </shape>
 
@@ -759,7 +1496,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space2X, values.row3PosY)
+/position = (values.rowPosX + values.space8X, values.row2PosY)
 /erase = false
 </shape>
 
@@ -767,7 +1504,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space3X, values.row3PosY)
+/position = (values.rowPosX + values.space9X, values.row2PosY)
 /erase = false
 </shape>
 
@@ -775,16 +1512,16 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space4X, values.row3PosY)
+/position = (values.rowPosX + values.space10X, values.row2PosY)
 /erase = false
 </shape>
 
-
+*************************Third row*************************
 <shape box21>
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space5X, values.row3PosY)
+/position = (values.rowPosX + values.space1X, values.row3PosY)
 /erase = false
 </shape>
 
@@ -792,7 +1529,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space6X, values.row3PosY)
+/position = (values.rowPosX + values.space2X, values.row3PosY)
 /erase = false
 </shape>
 
@@ -800,7 +1537,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space7X, values.row3PosY)
+/position = (values.rowPosX + values.space3X, values.row3PosY)
 /erase = false
 </shape>
 
@@ -808,17 +1545,15 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space8X, values.row3PosY)
+/position = (values.rowPosX + values.space4X, values.row3PosY)
 /erase = false
 </shape>
-
-*************************Fourth row*************************
 
 <shape box25>
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space1X, values.row4PosY)
+/position = (values.rowPosX + values.space5X, values.row3PosY)
 /erase = false
 </shape>
 
@@ -826,7 +1561,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space2X, values.row4PosY)
+/position = (values.rowPosX + values.space6X, values.row3PosY)
 /erase = false
 </shape>
 
@@ -834,7 +1569,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space3X, values.row4PosY)
+/position = (values.rowPosX + values.space7X, values.row3PosY)
 /erase = false
 </shape>
 
@@ -842,7 +1577,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space4X, values.row4PosY)
+/position = (values.rowPosX + values.space8X, values.row3PosY)
 /erase = false
 </shape>
 
@@ -850,7 +1585,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space5X, values.row4PosY)
+/position = (values.rowPosX + values.space9X, values.row3PosY)
 /erase = false
 </shape>
 
@@ -858,15 +1593,16 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space6X, values.row4PosY)
+/position = (values.rowPosX + values.space10X, values.row3PosY)
 /erase = false
 </shape>
 
+*************************Fourth row*************************
 <shape box31>
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space7X, values.row4PosY)
+/position = (values.rowPosX + values.space1X, values.row4PosY)
 /erase = false
 </shape>
 
@@ -874,17 +1610,15 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space8X, values.row4PosY)
+/position = (values.rowPosX + values.space2X, values.row4PosY)
 /erase = false
 </shape>
-
-*************************Fifth row*************************
 
 <shape box33>
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space1X, values.row5PosY)
+/position = (values.rowPosX + values.space3X, values.row4PosY)
 /erase = false
 </shape>
 
@@ -892,7 +1626,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space2X, values.row5PosY)
+/position = (values.rowPosX + values.space4X, values.row4PosY)
 /erase = false
 </shape>
 
@@ -900,7 +1634,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space3X, values.row5PosY)
+/position = (values.rowPosX + values.space5X, values.row4PosY)
 /erase = false
 </shape>
 
@@ -908,7 +1642,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space4X, values.row5PosY)
+/position = (values.rowPosX + values.space6X, values.row4PosY)
 /erase = false
 </shape>
 
@@ -916,7 +1650,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space5X, values.row5PosY)
+/position = (values.rowPosX + values.space7X, values.row4PosY)
 /erase = false
 </shape>
 
@@ -924,7 +1658,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space6X, values.row5PosY)
+/position = (values.rowPosX + values.space8X, values.row4PosY)
 /erase = false
 </shape>
 
@@ -932,7 +1666,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space7X, values.row5PosY)
+/position = (values.rowPosX + values.space9X, values.row4PosY)
 /erase = false
 </shape>
 
@@ -940,16 +1674,16 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space8X, values.row5PosY)
+/position = (values.rowPosX + values.space10X, values.row4PosY)
 /erase = false
 </shape>
 
-*************************Sixth row*************************
+*************************Fifth row*************************
 <shape box41>
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space1X, values.row6PosY)
+/position = (values.rowPosX + values.space1X, values.row5PosY)
 /erase = false
 </shape>
 
@@ -957,7 +1691,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space2X, values.row6PosY)
+/position = (values.rowPosX + values.space2X, values.row5PosY)
 /erase = false
 </shape>
 
@@ -965,7 +1699,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space3X, values.row6PosY)
+/position = (values.rowPosX + values.space3X, values.row5PosY)
 /erase = false
 </shape>
 
@@ -973,7 +1707,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space4X, values.row6PosY)
+/position = (values.rowPosX + values.space4X, values.row5PosY)
 /erase = false
 </shape>
 
@@ -981,7 +1715,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space5X, values.row6PosY)
+/position = (values.rowPosX + values.space5X, values.row5PosY)
 /erase = false
 </shape>
 
@@ -989,7 +1723,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space6X, values.row6PosY)
+/position = (values.rowPosX + values.space6X, values.row5PosY)
 /erase = false
 </shape>
 
@@ -997,7 +1731,7 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space7X, values.row6PosY)
+/position = (values.rowPosX + values.space7X, values.row5PosY)
 /erase = false
 </shape>
 
@@ -1005,18 +1739,15 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space8X, values.row6PosY)
+/position = (values.rowPosX + values.space8X, values.row5PosY)
 /erase = false
 </shape>
-
-*************************Seventh row*************************
-
 
 <shape box49>
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space1X, values.row7PosY)
+/position = (values.rowPosX + values.space9X, values.row5PosY)
 /erase = false
 </shape>
 
@@ -1024,131 +1755,17 @@
 /shape = rectangle
 /size = (values.sizeBoxX, values.sizeBoxY)
 /color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space2X, values.row7PosY)
-/erase = false
-</shape>
-
-<shape box51>
-/shape = rectangle
-/size = (values.sizeBoxX, values.sizeBoxY)
-/color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space3X, values.row7PosY)
-/erase = false
-</shape>
-
-<shape box52>
-/shape = rectangle
-/size = (values.sizeBoxX, values.sizeBoxY)
-/color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space4X, values.row7PosY)
-/erase = false
-</shape>
-
-<shape box53>
-/shape = rectangle
-/size = (values.sizeBoxX, values.sizeBoxY)
-/color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space5X, values.row7PosY)
-/erase = false
-</shape>
-
-<shape box54>
-/shape = rectangle
-/size = (values.sizeBoxX, values.sizeBoxY)
-/color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space6X, values.row7PosY)
-/erase = false
-</shape>
-
-<shape box55>
-/shape = rectangle
-/size = (values.sizeBoxX, values.sizeBoxY)
-/color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space7X, values.row7PosY)
-/erase = false
-</shape>
-
-<shape box56>
-/shape = rectangle
-/size = (values.sizeBoxX, values.sizeBoxY)
-/color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space8X, values.row7PosY)
-/erase = false
-</shape>
-
-*************************Eighth row*************************
-
-<shape box57>
-/shape = rectangle
-/size = (values.sizeBoxX, values.sizeBoxY)
-/color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space1X, values.row8PosY)
-/erase = false
-</shape>
-
-<shape box58>
-/shape = rectangle
-/size = (values.sizeBoxX, values.sizeBoxY)
-/color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space2X, values.row8PosY)
-/erase = false
-</shape>
-
-<shape box59>
-/shape = rectangle
-/size = (values.sizeBoxX, values.sizeBoxY)
-/color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space3X, values.row8PosY)
-/erase = false
-</shape>
-
-<shape box60>
-/shape = rectangle
-/size = (values.sizeBoxX, values.sizeBoxY)
-/color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space4X, values.row8PosY)
-/erase = false
-</shape>
-
-<shape box61>
-/shape = rectangle
-/size = (values.sizeBoxX, values.sizeBoxY)
-/color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space5X, values.row8PosY)
-/erase = false
-</shape>
-
-<shape box62>
-/shape = rectangle
-/size = (values.sizeBoxX, values.sizeBoxY)
-/color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space6X, values.row8PosY)
-/erase = false
-</shape>
-
-<shape box63>
-/shape = rectangle
-/size = (values.sizeBoxX, values.sizeBoxY)
-/color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space7X, values.row8PosY)
-/erase = false
-</shape>
-
-<shape box64>
-/shape = rectangle
-/size = (values.sizeBoxX, values.sizeBoxY)
-/color = (values.redBox, values.greenBox, values.blueBox)
-/position = (values.rowPosX + values.space8X, values.row8PosY)
+/position = (values.rowPosX + values.space10X, values.row5PosY)
 /erase = false
 </shape>
 
 
 ******
-Now 64 dots are defined to appear within the 64 boxes. At first, all dots are black, so that they are invisible before being clicked on. 
+Now 50 dots are defined to appear within the 50 boxes. At first, all dots are black, so that they are invisible before being clicked on. 
 Later its color is being changed if the corresponding box is being clicked on
 
 ***********************************************************
-*Definition of 64 dots
+*Definition of 50 dots
 *************************First row*************************
 <shape dot1>
 /shape = circle
@@ -1214,13 +1831,11 @@ Later its color is being changed if the corresponding box is being clicked on
 / erase = false
 </shape>
 
-*************************Second row*************************
-
 <shape dot9>
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space1X, values.row2PosY)
+/position = (values.rowPosX + values.space9X, values.row1PosY)
 / erase = false
 </shape>
 
@@ -1228,15 +1843,16 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space2X, values.row2PosY)
+/position = (values.rowPosX + values.space10X, values.row1PosY)
 /erase = false
 </shape>
 
+*************************Second row*************************
 <shape dot11>
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space3X, values.row2PosY)
+/position = (values.rowPosX + values.space1X, values.row2PosY)
 /erase = false
 </shape>
 
@@ -1244,7 +1860,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space4X, values.row2PosY)
+/position = (values.rowPosX + values.space2X, values.row2PosY)
 /erase = false
 </shape>
 
@@ -1252,7 +1868,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space5X, values.row2PosY)
+/position = (values.rowPosX + values.space3X, values.row2PosY)
 /erase = false
 </shape>
 
@@ -1260,7 +1876,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space6X, values.row2PosY)
+/position = (values.rowPosX + values.space4X, values.row2PosY)
 /erase = false
 </shape>
 
@@ -1268,7 +1884,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space7X, values.row2PosY)
+/position = (values.rowPosX + values.space5X, values.row2PosY)
 /erase = false
 </shape>
 
@@ -1276,17 +1892,15 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space8X, values.row2PosY)
+/position = (values.rowPosX + values.space6X, values.row2PosY)
 /erase = false
 </shape>
-
-*************************Third row*************************
 
 <shape dot17>
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space1X, values.row3PosY)
+/position = (values.rowPosX + values.space7X, values.row2PosY)
 /erase = false
 </shape>
 
@@ -1294,7 +1908,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space2X, values.row3PosY)
+/position = (values.rowPosX + values.space8X, values.row2PosY)
 / erase = false
 </shape>
 
@@ -1302,7 +1916,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space3X, values.row3PosY)
+/position = (values.rowPosX + values.space9X, values.row2PosY)
 /erase = false
 </shape>
 
@@ -1310,15 +1924,16 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space4X, values.row3PosY)
+/position = (values.rowPosX + values.space10X, values.row2PosY)
 /erase = false
 </shape>
 
+*************************Third row*************************
 <shape dot21>
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space5X, values.row3PosY)
+/position = (values.rowPosX + values.space1X, values.row3PosY)
 /erase = false
 </shape>
 
@@ -1326,7 +1941,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space6X, values.row3PosY)
+/position = (values.rowPosX + values.space2X, values.row3PosY)
 /erase = false
 </shape>
 
@@ -1334,7 +1949,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space7X, values.row3PosY)
+/position = (values.rowPosX + values.space3X, values.row3PosY)
 /erase = false
 </shape>
 
@@ -1342,17 +1957,15 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space8X, values.row3PosY)
+/position = (values.rowPosX + values.space4X, values.row3PosY)
 /erase = false
 </shape>
-
-*************************Fourth row*************************
 
 <shape dot25>
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space1X, values.row4PosY)
+/position = (values.rowPosX + values.space5X, values.row3PosY)
 /erase = false
 </shape>
 
@@ -1360,7 +1973,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space2X, values.row4PosY)
+/position = (values.rowPosX + values.space6X, values.row3PosY)
 /erase = false
 </shape>
 
@@ -1368,7 +1981,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space3X, values.row4PosY)
+/position = (values.rowPosX + values.space7X, values.row3PosY)
 /erase = false
 </shape>
 
@@ -1376,7 +1989,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space4X, values.row4PosY)
+/position = (values.rowPosX + values.space8X, values.row3PosY)
 / erase = false
 </shape>
 
@@ -1384,7 +1997,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space5X, values.row4PosY)
+/position = (values.rowPosX + values.space9X, values.row3PosY)
 /erase = false
 </shape>
 
@@ -1392,15 +2005,16 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space6X, values.row4PosY)
+/position = (values.rowPosX + values.space10X, values.row3PosY)
 /erase = false
 </shape>
 
+*************************Fourth row*************************
 <shape dot31>
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space7X, values.row4PosY)
+/position = (values.rowPosX + values.space1X, values.row4PosY)
 /erase = false
 </shape>
 
@@ -1408,17 +2022,15 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space8X, values.row4PosY)
+/position = (values.rowPosX + values.space2X, values.row4PosY)
 /erase = false
 </shape>
-
-*************************Fifth row*************************
 
 <shape dot33>
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space1X, values.row5PosY)
+/position = (values.rowPosX + values.space3X, values.row4PosY)
 /erase = false
 </shape>
 
@@ -1426,7 +2038,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space2X, values.row5PosY)
+/position = (values.rowPosX + values.space4X, values.row4PosY)
 /erase = false
 </shape>
 
@@ -1434,7 +2046,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space3X, values.row5PosY)
+/position = (values.rowPosX + values.space5X, values.row4PosY)
 /erase = false
 </shape>
 
@@ -1442,7 +2054,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space4X, values.row5PosY)
+/position = (values.rowPosX + values.space6X, values.row4PosY)
 /erase = false
 </shape>
 
@@ -1450,7 +2062,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space5X, values.row5PosY)
+/position = (values.rowPosX + values.space7X, values.row4PosY)
 /erase = false
 </shape>
 
@@ -1458,7 +2070,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space6X, values.row5PosY)
+/position = (values.rowPosX + values.space8X, values.row4PosY)
 / erase = false
 </shape>
 
@@ -1466,7 +2078,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space7X, values.row5PosY)
+/position = (values.rowPosX + values.space9X, values.row4PosY)
 /erase = false
 </shape>
 
@@ -1474,16 +2086,16 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space8X, values.row5PosY)
+/position = (values.rowPosX + values.space10X, values.row4PosY)
 /erase = false
 </shape>
 
-*************************Sixth row*************************
+*************************Fifth row*************************
 <shape dot41>
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space1X, values.row6PosY)
+/position = (values.rowPosX + values.space1X, values.row5PosY)
 /erase = false
 </shape>
 
@@ -1491,7 +2103,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space2X, values.row6PosY)
+/position = (values.rowPosX + values.space2X, values.row5PosY)
 /erase = false
 </shape>
 
@@ -1499,7 +2111,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space3X, values.row6PosY)
+/position = (values.rowPosX + values.space3X, values.row5PosY)
 /erase = false
 </shape>
 
@@ -1507,7 +2119,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space4X, values.row6PosY)
+/position = (values.rowPosX + values.space4X, values.row5PosY)
 /erase = false
 </shape>
 
@@ -1515,7 +2127,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space5X, values.row6PosY)
+/position = (values.rowPosX + values.space5X, values.row5PosY)
 /erase = false
 </shape>
 
@@ -1523,7 +2135,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space6X, values.row6PosY)
+/position = (values.rowPosX + values.space6X, values.row5PosY)
 /erase = false
 </shape>
 
@@ -1531,7 +2143,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space7X, values.row6PosY)
+/position = (values.rowPosX + values.space7X, values.row5PosY)
 /erase = false
 </shape>
 
@@ -1539,17 +2151,15 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space8X, values.row6PosY)
+/position = (values.rowPosX + values.space8X, values.row5PosY)
 / erase = false
 </shape>
-
-*************************Seventh row*************************
 
 <shape dot49>
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space1X, values.row7PosY)
+/position = (values.rowPosX + values.space9X, values.row5PosY)
 /erase = false
 </shape>
 
@@ -1557,122 +2167,7 @@ Later its color is being changed if the corresponding box is being clicked on
 /shape = circle
 /color = black
 /size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space2X, values.row7PosY)
-/erase = false
-</shape>
-
-<shape dot51>
-/shape = circle
-/color = black
-/size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space3X, values.row7PosY)
-/erase = false
-</shape>
-
-<shape dot52>
-/shape = circle
-/color = black
-/size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space4X, values.row7PosY)
-/erase = false
-</shape>
-
-<shape dot53>
-/shape = circle
-/color = black
-/size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space5X, values.row7PosY)
-/erase = false
-</shape>
-
-<shape dot54>
-/shape = circle
-/color = black
-/size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space6X, values.row7PosY)
-/erase = false
-</shape>
-
-<shape dot55>
-/shape = circle
-/color = black
-/size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space7X, values.row7PosY)
-/erase = false
-</shape>
-
-<shape dot56>
-/shape = circle
-/color = black
-/size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space8X, values.row7PosY)
-/erase = false
-</shape>
-
-*************************Eighth row*************************
-
-
-<shape dot57>
-/shape = circle
-/color = black
-/size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space1X, values.row8PosY)
-/erase = false
-</shape>
-
-<shape dot58>
-/shape = circle
-/color = black
-/size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space2X, values.row8PosY)
-/erase = false
-</shape>
-
-<shape dot59>
-/shape = circle
-/color = black
-/size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space3X, values.row8PosY)
-/erase = false
-</shape>
-
-<shape dot60>
-/shape = circle
-/color = black
-/size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space4X, values.row8PosY)
-/erase = false
-</shape>
-
-<shape dot61>
-/shape = circle
-/color = black
-/size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space5X, values.row8PosY)
-/erase = false
-</shape>
-
-<shape dot62>
-/shape = circle
-/color = black
-/size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space6X, values.row8PosY)
-/erase = false
-</shape>
-
-<shape dot63>
-/shape = circle
-/color = black
-/size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space7X, values.row8PosY)
-/erase = false
-</shape>
-
-<shape dot64>
-/shape = circle
-/color = black
-/size = (values.sizeDotX, values.sizeDotY)
-/position = (values.rowPosX + values.space8X, values.row8PosY)
+/position = (values.rowPosX + values.space10X, values.row5PosY)
 /erase = false
 </shape>
 
@@ -1831,6 +2326,40 @@ else if ((trial.trial_choose.response == "responseoption_trialdecide_color1" || 
 else if (values.incorrect==1) trial.trial_choose]
 / skip=[values.endblock == 1]
 / skip=[values.current_click>list_length+1]
+</trial>
+
+*This trial is only shown, if participants decided too late. This is captured in the value toolate_trial_02. Additionally, the value for the draw count is increased by one.
+<trial trial1_too_late>
+/stimulusframes = [1= white_BG, too_late, next_button]
+/inputdevice = mouse
+/validresponse = (next_button)
+/ontrialend = [values.endblock = 1;
+if (values.current_list == 1) {values.draws_trial_01+=1; values.toolate_trial_01=1}
+else if (values.current_list == 2) {values.draws_trial_02+=1; values.toolate_trial_02=1}
+else if (values.current_list == 3) {values.draws_trial_03+=1; values.toolate_trial_03=1}
+else if (values.current_list == 4) {values.draws_trial_04+=1; values.toolate_trial_04=1}
+else if (values.current_list == 5) {values.draws_trial_05+=1; values.toolate_trial_05=1}
+else if (values.current_list == 6) {values.draws_trial_06+=1; values.toolate_trial_06=1}
+else if (values.current_list == 7) {values.draws_trial_07+=1; values.toolate_trial_07=1}
+else if (values.current_list == 8) {values.draws_trial_08+=1; values.toolate_trial_08=1}
+else if (values.current_list == 9) {values.draws_trial_09+=1; values.toolate_trial_09=1}
+else if (values.current_list == 10) {values.draws_trial_10+=1; values.toolate_trial_10=1}
+else if (values.current_list == 11) {values.draws_trial_11+=1; values.toolate_trial_11=1}
+else if (values.current_list == 12) {values.draws_trial_12+=1; values.toolate_trial_12=1}
+else if (values.current_list == 13) {values.draws_trial_13+=1; values.toolate_trial_13=1}
+else if (values.current_list == 14) {values.draws_trial_14+=1; values.toolate_trial_14=1}
+else if (values.current_list == 15) {values.draws_trial_15+=1; values.toolate_trial_15=1}
+else if (values.current_list == 16) {values.draws_trial_16+=1; values.toolate_trial_16=1}
+else if (values.current_list == 17) {values.draws_trial_17+=1; values.toolate_trial_17=1}
+else if (values.current_list == 18) {values.draws_trial_18+=1; values.toolate_trial_18=1}
+else if (values.current_list == 19) {values.draws_trial_19+=1; values.toolate_trial_19=1}
+else if (values.current_list == 20) {values.draws_trial_20+=1; values.toolate_trial_20=1}]
+</trial>
+
+<trial trial_start>
+/stimulusframes = [1= white_BG, start, next_button, reminder_pressure]
+/inputdevice = mouse
+/validresponse = (next_button)
 </trial>
 
 
@@ -1998,7 +2527,7 @@ values.sequence = concat(concat(values.sequence,values.current_list), ", ");]
 
 *This runs the experiment. Here is defined, how many trials/sequences the participant should do. This is defined by the number of blocks (default: 1-20; this means 20 trials/sequences) 
 <expt experiment>
-/blocks = [1-20=boxtask_pressure50]
+/blocks = [1-3=boxtask_pressure50]
 /preinstructions = (instructions_pressure12_long, Reminder_Pressure)
 /onblockbegin = [values.incorrect=0;  
 values.current_click = 0;
@@ -2052,21 +2581,7 @@ values.box46_click = 0;
 values.box47_click = 0;
 values.box48_click = 0;
 values.box49_click = 0;
-values.box50_click = 0; 
-values.box51_click = 0;
-values.box52_click = 0;
-values.box53_click = 0;
-values.box54_click = 0;
-values.box55_click = 0;
-values.box56_click = 0;
-values.box57_click = 0;
-values.box58_click = 0;
-values.box59_click = 0;
-values.box60_click = 0;
-values.box61_click = 0;
-values.box62_click = 0;
-values.box63_click = 0;
-values.box64_click = 0;
+values.box50_click = 0;
 shape.dot1.color = black;
 shape.dot2.color = black;
 shape.dot3.color = black;
@@ -2117,20 +2632,6 @@ shape.dot47.color = black;
 shape.dot48.color = black;
 shape.dot49.color = black;
 shape.dot50.color = black;
-shape.dot51.color = black;
-shape.dot52.color = black;
-shape.dot53.color = black;
-shape.dot54.color = black;
-shape.dot55.color = black;
-shape.dot56.color = black;
-shape.dot57.color = black;
-shape.dot58.color = black;
-shape.dot59.color = black;
-shape.dot60.color = black;
-shape.dot61.color = black;
-shape.dot62.color = black;
-shape.dot63.color = black;
-shape.dot64.color = black;
 ]
 </expt>
 
@@ -2156,10 +2657,30 @@ shape.dot64.color = black;
 /draws_trial_18=-88
 /draws_trial_19=-88
 /draws_trial_20=-88
+/toolate_trial_01=0
+/toolate_trial_02=0
+/toolate_trial_03=0
+/toolate_trial_04=0
+/toolate_trial_05=0
+/toolate_trial_06=0
+/toolate_trial_07=0
+/toolate_trial_08=0
+/toolate_trial_09=0
+/toolate_trial_10=0
+/toolate_trial_11=0
+/toolate_trial_12=0
+/toolate_trial_13=0
+/toolate_trial_14=0
+/toolate_trial_15=0
+/toolate_trial_16=0
+/toolate_trial_17=0
+/toolate_trial_18=0
+/toolate_trial_19=0
+/toolate_trial_20=0
 /incorrect=0 
 /current_click = 0
 /endblock = 0
-/box1_click = 0 
+/box1_click = 0
 /box2_click = 0
 /box3_click = 0
 /box4_click = 0
@@ -2259,6 +2780,66 @@ values.draws_trial_17,
 values.draws_trial_18, 
 values.draws_trial_19,
 values.draws_trial_20,
+values.toolate_trial_01, 
+values.toolate_trial_02, 
+values.toolate_trial_03, 
+values.toolate_trial_04, 
+values.toolate_trial_05, 
+values.toolate_trial_06, 
+values.toolate_trial_07, 
+values.toolate_trial_08, 
+values.toolate_trial_09, 
+values.toolate_trial_10, 
+values.toolate_trial_11, 
+values.toolate_trial_12, 
+values.toolate_trial_13, 
+values.toolate_trial_14, 
+values.toolate_trial_15, 
+values.toolate_trial_16, 
+values.toolate_trial_17, 
+values.toolate_trial_18, 
+values.toolate_trial_19, 
+values.toolate_trial_20, 
+likert.likert_probability01.response, 
+likert.likert_probability02.response, 
+likert.likert_probability03.response, 
+likert.likert_probability04.response, 
+likert.likert_probability05.response, 
+likert.likert_probability06.response, 
+likert.likert_probability07.response, 
+likert.likert_probability08.response, 
+likert.likert_probability09.response, 
+likert.likert_probability10.response, 
+likert.likert_probability11.response, 
+likert.likert_probability12.response, 
+likert.likert_probability13.response, 
+likert.likert_probability14.response, 
+likert.likert_probability15.response, 
+likert.likert_probability16.response, 
+likert.likert_probability17.response, 
+likert.likert_probability18.response, 
+likert.likert_probability19.response, 
+likert.likert_probability20.response, 
+likert.confidence01.response, 
+likert.confidence02.response, 
+likert.confidence03.response, 
+likert.confidence04.response, 
+likert.confidence05.response, 
+likert.confidence06.response, 
+likert.confidence07.response, 
+likert.confidence08.response, 
+likert.confidence09.response, 
+likert.confidence10.response, 
+likert.confidence11.response, 
+likert.confidence12.response, 
+likert.confidence13.response, 
+likert.confidence14.response, 
+likert.confidence15.response, 
+likert.confidence16.response, 
+likert.confidence17.response, 
+likert.confidence18.response, 
+likert.confidence19.response, 
+likert.confidence20.response, 
 values.colordecision_trial01, 
 values.colordecision_trial02, 
 values.colordecision_trial03,
@@ -2286,3 +2867,4 @@ values.sequence]
 / canvasaspectratio = (16,9)
 / canvassize = (95%,100%)
 </defaults>
+
